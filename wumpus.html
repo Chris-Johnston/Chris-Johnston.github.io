@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Hunt The Wumpus by "Byte Me"</title>
+		<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+		<script type="text/javascript">
+		<!--
+		var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+		if (document.location.protocol == 'https:')
+			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+		-->
+		</script>
+		<script type="text/javascript">
+		<!--
+			var config = {
+				width: 960, 
+				height: 540,
+				params: { enableDebugging:"0" }
+				
+			};
+			config.params["disableContextMenu"] = true;
+			var u = new UnityObject2(config);
+			
+			jQuery(function() {
+
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+
+				u.observeProgress(function (progress) {
+					switch(progress.pluginStatus) {
+						case "broken":
+							$brokenScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$brokenScreen.show();
+						break;
+						case "missing":
+							$missingScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$missingScreen.show();
+						break;
+						case "installed":
+							$missingScreen.remove();
+						break;
+						case "first":
+						break;
+					}
+				});
+				u.initPlugin(jQuery("#unityPlayer")[0], "https://dl.dropboxusercontent.com/u/59755513/HuntTheWumpus/ByteMeHuntTheWumpus.unity3d");
+			});
+		-->
+		</script>
+		<style type="text/css">
+		<!--
+		body {
+			font-family: Helvetica, Verdana, Arial, sans-serif;
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+		a:link, a:visited {
+			color: #000;
+		}
+		a:active, a:hover {
+			color: #666;
+		}
+		p.header {
+			font-size: small;
+		}
+		p.header span {
+			font-weight: bold;
+		}
+		p.footer {
+			font-size: x-small;
+		}
+		div.content {
+			margin: auto;
+			width: 960px;
+		}
+		div.broken,
+		div.missing {
+			margin: auto;
+			position: relative;
+			top: 50%;
+			width: 193px;
+		}
+		div.broken a,
+		div.missing a {
+			height: 63px;
+			position: relative;
+			top: -31px;
+		}
+		div.broken img,
+		div.missing img {
+			border-width: 0px;
+		}
+		div.broken {
+			display: none;
+		}
+		div#unityPlayer {
+			cursor: default;
+			height: 540px;
+			width: 960px;
+		}
+		div.subheader{
+			font-size: 150%;
+		}
+		div.names{
+			font-size: 75%;
+		}
+		
+		div.controlwrapper {
+			margin-left: auto;
+			margin-right: auto;
+			width: 500px;
+		}
+		p.controls {
+			text-align: left;
+			margin-top:0;
+			margin-bottom:0;
+		}
+		
+		-->
+		</style>
+	</head>
+	<body>
+		<h1>Hunt The Wumpus!</h1>
+		<div class="subheader">Team "Byte Me"</div>
+		<div class="names">Aaron Ong, Chris Johnston, Nadia Medvinsky, Priya Nakkiran</div>
+		<!-- Website by Chris Johnston! (I just made modifications to the template Unity web build) -->
+		<br>
+		<div class="content">
+			<div id="unityPlayer">
+				<div class="missing">
+					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+						<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="subheader">Keyboard Controls:</div>
+		<div class="controlwrapper">
+			<p class="controls">A, W, D - Left, Forward, Right</p>
+			<p class="controls">E - Fire Arrow</p>
+			<p class="controls">B - Buy Menu</p>
+			<p class="controls">Escape - Quit</p>
+			<p class="controls">Numbers 1-4 can be used in Buy menu and trivia pop-ups.</p>
+		</div>
+		<div class="subheader">XBOX 360 Controls:</div>
+		<i>Yes, you can plug in a wired XBOX 360 controller!</i>
+		<div class="controlwrapper">
+			<p class="controls">Left Analog Stick - Movement</p>
+			<p class="controls">Right Trigger - Fire Arrow</p>
+			<p class="controls">Left Bumper - Buy Menu</p>
+			<p class="controls">Start - Start/Quit</p>
+			<p class="controls">Face buttons (A, B, X, Y) are used in all pop-ups, and correspond to the matching colors.</p>
+		</div>
+		<p>Touchscreen/Mouse controls also work, however a keyboard is needed for entering a custom seed and player name.</p>
+		<div class="subheader">How to play</div>
+		<div class="controlwrapper">	
+			<p class="controls">Navigate through the cave in order to fight the Wumpus. The only way you can kill the Wumpus is by shooting it with an arrow through an open doorway. If you run out of arrows or die, you will lose.</p>
+		</div>
+		<div class="subheader">Download</div>
+		<div class="controlwrapper">
+			<a style="color:white;" href="resources/HuntTheWumpusByteMe.zip" download>Windows Standalone - HuntTheWumpusByteMe.zip (22 MB)</a>
+			<br>
+			<a style="color:white;" href="resources/HuntTheWumpusByteMe - Source.zip" download>Source (62.6 MB)</a>
+		</div>
+		
+		<br>
+		<div class="subheader">Some behind-the-scenes screenshots</div>
+		<img src="images/blenderscreenshot.png" style="height:50%; width:50%;">
+		<p>Blender was used to create the 3d models that were used in the game. There were many models that were created that didn't make it into the game for one reason or another.</p>
+		<img src="images/doorrender.png" style="height:50%; width:50%;">
+		<p>A concept-render from when Chris was creating the 3d models. The different rooms were planned to have themes and unique styles.</p>
+		<img src="images/pitscreenshot.png" style="height:50%; width:50%;">
+		<p>Originally the pits were planned to look like this.</p>
+		<img src="images/unityscreenshot.png" style="height:50%; width:50%;">
+		<p>Here is what the Unity Editor looks like. Unity was used for handling the visuals and sounds. Unity can build projects for Web Players, Standalone PC/Linux/Mac, Windows Phone/Android/IOS, Xbox/Playstation...</p>
+		
+		<br>
+		<h1>Thanks for Playing!</h1>
+	</body>
+</html>

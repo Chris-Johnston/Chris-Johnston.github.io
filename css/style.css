@@ -1,0 +1,70 @@
+﻿body
+{
+  padding: 0;
+  margin: 0; 
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #EEEEEE;
+}
+
+#header{
+    margin: 0;
+    padding: 20px 0 10px 0;
+    text-align: center;
+    color: white;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#63b6db+0,309dcf+100;Blue+3D+%234 */
+    background: #63b6db; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #63b6db 0%, #309dcf 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #63b6db 0%,#309dcf 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #63b6db 0%,#309dcf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63b6db', endColorstr='#309dcf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#content{
+    background-color: white;
+    margin: 10px 50px 5px 50px;
+}
+
+article {
+    border-top: 1px solid #63b6db;
+    border-bottom: 1px solid #63b6db;
+    margin: 7px 0;
+    padding: 20px;
+}
+
+header {
+    font-weight: 300;
+    font-size: 200%;
+}
+
+strong, em, a {
+    color: rgba(92, 182, 219, 1);
+}
+
+blockquote {
+    background-color: rgba(92, 182, 219, 0.25);
+    margin-left: 0;
+    padding-left: 40px;
+    font-weight: 300;
+}
+
+code {
+    border: 1px solid #63b6db;
+    background-color: #EEEEEE;
+    padding: 5px;
+}
+
+h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 300%;
+    text-shadow: 0 0 5px #000000;
+    margin: 0;
+} 
+#contact-info {
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+}
+
+ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
