@@ -6,7 +6,7 @@
   background-color: #EEEEEE;
 }
 
-#header{
+#header , footer{
     margin: 0;
     padding: 20px 0 10px 0;
     text-align: center;
@@ -22,6 +22,7 @@
 #content{
     background-color: white;
     margin: 10px 50px 5px 50px;
+    box-shadow: rgba(0,0,0,0.15) 0 0 20px;
 }
 
 article {
@@ -59,7 +60,7 @@ h1{
     text-shadow: 0 0 5px #000000;
     margin: 0;
 } 
-#contact-info, #contact-info > a {
+#contact-info, #contact-info > a, footer {
     color: rgba(255,255,255,0.75);
     font-weight: 300;
 }
