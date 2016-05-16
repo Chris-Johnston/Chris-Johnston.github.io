@@ -15,26 +15,42 @@
     </div>
 
     <div id="content">
+        <!--<article>
+            <header>CSS Test</header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+                <a>Anchor text</a>
+                <em>Emphasis</em>
+                <strong>Strong text</strong>
+                <img alt="Image" src="images/xmas tree.jpg" />
+            </p>
+        </article>-->
+
         <article>
             <header>Who Am I?</header>
-            <p>I'm a computer nerd who likes <span title="I have a Razer Blackwidow Ultimate with MX Blues, a Poker II with Clears, and a Unicomp Classic Buckling Spring keyboard. Ergodox soon.">mechanical keyboards</span>,
-                programming, video games and listening to music.</p>
-            <p>I graduated from Redmond High School in June 2015 with a 3.4 GPA and I'm currently
-                taking classes at Bellevue College. Last quarter, I got a 97% in my 
-                Introduction to C++ class, 100% in Motion Graphics, and 102% in my
-            Web Design class. <em>Woo! Extra Credit!</em></p>
-            <p>
-                I've worked in:
-                <ul>
-                    <li>C/C++ <em>(Including the Arduino version)</em></li>
-                    <li>C#</li>
-                    <li>HTML/CSS/Javascript</li>
-                    <li>Java</li>
-                    <li>PHP <em>(Just a bit)</em></li>
-                    <li>Python <em>(I prefer 3.x to 2.x)</em></li>
-                </ul>
+            <p>I'm a nerd who likes <span title="I have too many...">mechanical keyboards</span>,
+                programming, video games, photography, and listening to music. I enjoy making lights blink and stuff move around on screens.
             </p>
+            <p>
+                I graduated from Redmond High School in June 2015.
+                I'm currently taking classes at Bellevue College, with plans of transferring to UW Bothell in the fall.
+            </p>
+            <h4>
+                I've worked with:
+            </h4>
+            <ul>
+                <li>C++ <em>(Arduino too!)</em></li>
+                <li>C#</li>
+                <li>HTML, CSS, Javascript</li> <!-- so meta --> 
+                <li>Java</li>
+                <li>PHP</li>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>XML, XAML <em>(XAML used for WPF forms.)</em></li>
+            </ul>
         </article>
+        <h2>Projects</h2>
         <article>
             <header>Internet X-mas Tree Project (Dec 2015)</header>
             <img alt="My Christmas tree. Very festive." src="images/xmas tree.jpg" />
@@ -52,10 +68,15 @@
         <article>
             <header>GBJAM 4 - Low Battery (August 2015)</header>
             <img alt="Low Battery Screenshots" src="images/lowbattery.jpg" />  
-            <p>Made for <a href="http://www.gbjam.net/">GBJAM 4</a> a "game jam" themed around the style of the original GameBoy handheld. Like any other "game jam", everything had to be made from scratch,
-            but this event had to be GameBoy themed. It must have the original GameBoy resolution of 160px x 144px, and use only 4 colors.
-            For this project, I learned the MonoGame game engine, which is a open source implementation of the Microsoft XNA 4.x framework.
-            While we were given 10 days for this game, I was on vacation for most of it. The game turned out to be very short, due to a lack of levels.
+            <p>Made for <a href="http://www.gbjam.net/">GBJAM 4</a> a "game jam" themed around the style of the 
+            original GameBoy handheld. Like any other "game jam",
+             everything had to be made from scratch.
+            It must have the original GameBoy resolution of 160px x 144px (or scaled), and use only 4 colors.
+            </p>
+            <p>
+            For this project, I learned how to use the MonoGame game engine, which is a open source implementation of the 
+            Microsoft XNA 4.x framework.
+            Due to other cicumstances, I was able to develop most of the gameplay, but not very many levels. It's very short.
             <br />
             <a href="gamejolt.com/games/low-battery/87008">Check it out here.</a>
             </p>
@@ -65,7 +86,7 @@
             <img alt="The title screen for Operation Peeps" src="images/operation peeps.png" />
             <p><a href="http://ludumdare.com/">Ludum Dare</a> is a "game jam" event where solo participants have 48 hours
              to make an entire game based off of the given theme. All of the code and art assets must be created from scratch. 
-            I took this event as an opportunity to better familiarise myself with the Unity3D game engine (so that I could later use it for Hunt the Wumpus).
+            I took this event as an opportunity to better familiarize myself with the Unity3D game engine (so that I could later use it for Hunt the Wumpus).
             <br />
             <a href="http://ludumdare.com/compo/ludum-dare-32/?action=preview&uid=52345">My entry can be found here.</a>
             </p>
@@ -75,18 +96,18 @@
             <img alt="Hunt The Wumpus Gameplay" src="images/wumpus.jpg" />
             <p>Hunt the Wumpus was an event where groups were assigned to work on their own "Hunt the Wumpus" games, based only off of the given criteria.
             My team placed 1st runner up in the competition.
-            Our game used the Unity3D game engine, and was coded in C#. It also supported controller and touchscreen support.
+            Our game used the Unity3D game engine, and was coded in C#. It also had controller and touchscreen support.
             <br />
-            <a href="wumpus.html">I made a website to show it off.</a>
-            <em>While it has screenshots, you'll need the Unity Web Player to play it in-browser.</em></p>
+            <a href="wumpus.html">I made a website to show it off.</a> It contains some screenshots and the <strong>now deprecated</strong> Unity web player. Use the standalone build.
+            </p>
         </article>
         <article>
             <header>Snake Game (Spring 2015)</header>
             <img alt="Snake Game PCB" src="images/snake.jpg" />
             <p>
-                This project I made for my 2nd semester of Computer Science and Engineering. It's a 8x8 LED display and a controller with 6 buttons.
-                I then programmed a game of snake to run on the Arduino, complete with a menu and high-score tracking (until it's turned off).
-                The main controller board was custom made, designed in Fritzing and etched.
+                This was my final project in my Computer Science and Engineering class. It's an 8x8 LED display and a controller with 6 buttons.
+                I programmed it to play Snake, complete with a menu and high score system.
+                I designed the boards myself in Fritzing, etched them and soldered the components together.
             </p>
         </article>
         <article>
@@ -107,15 +128,13 @@
             <header>Raspberry Pi Clock</header>
             <img alt="THIS IS NOT A BOMB" src="images/notabomb2.JPG" />
             <p>
-                Around the time when that kid got in trouble for bringing his disassembled clock to school, I decided it would be interesting to make my own spin on it.
-                Using a Raspberry Pi, 16x2 LCD display and a real-time clock module (not shown), I created a clock which kept the time, even when the device was turned off.
+                Using a Raspberry Pi, a 16x2 LCD display and a real-time clock module (not shown), I created a clock which kept the time, even when the device was turned off.
                 It also made it clear to anyone around that it was <strong>not a bomb</strong>.
             </p>
         </article>
     </div>
     <footer>
-        Also, I made this website!<br />
-        Chris Johnston 2016
+        Website by Chris Johnston 2016
     </footer>
 </body>
 </html>
