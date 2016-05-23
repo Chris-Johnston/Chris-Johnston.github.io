@@ -1,4 +1,4 @@
-﻿body
+body
 {
   padding: 0;
   margin: 0; 
@@ -6,11 +6,15 @@
   background-color: #EEEEEE;
 }
 
+strong, em, a, h4 {
+    color: rgba(92, 182, 219, 1);
+}
+
 #header , footer{
     margin: 0;
     padding: 20px 0 10px 0;
     text-align: center;
-    color: white;
+    color: white !important;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#63b6db+0,309dcf+100;Blue+3D+%234 */
     background: #63b6db; /* Old browsers */
     background: -moz-linear-gradient(-45deg, #63b6db 0%, #309dcf 100%); /* FF3.6-15 */
@@ -38,11 +42,10 @@ header {
     font-weight: 300;
     font-size: 200%;
     border-bottom: 0.25px solid #63b6db;
+    margin-bottom: 5px;
 }
 
-strong, em, a {
-    color: rgba(92, 182, 219, 1);
-}
+
 
 a:hover {
     
@@ -89,10 +92,11 @@ h2{
 }
 
 h4{
-    margin: 8px 0 8px 0;
+    margin: 8px 0 8px 0; 
+    font-weight: 600;
 }
 
-#contact-info, #contact-info > a, footer {
+#contact-info, #contact-info > a, footer, footer > a {
     color: rgba(255,255,255,0.75);
     font-weight: 300;
 }
@@ -105,17 +109,63 @@ ul {
     margin-bottom: 0px;
 }
 
-.imgWrapper, img {
+.imgWrapper{
     display: block;
     padding: 3px;
     margin-left: auto;
     margin-right: auto;
-    max-height: 95%;
+    max-height: 75%;
     max-width: 95%;
     border-top: 0.25px solid #63b6db;
     border-bottom: 0.25px solid #63b6db;
 }
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 55%;
+    max-width: 95%;
+    box-shadow: rgba(0,0,0,0.4) 0px 2px 5px;
+}
 
 p{
     margin: 8px 0 8px 0;
+}
+
+/* mobile */
+
+@media only screen and (max-width: 750px){
+    #header{
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+    
+    #content {
+       margin-left: 0px;
+       margin-right: 0px;
+    }
+    h1{
+        font-size: 200%;
+    }
+    h2{
+        font-size: 175%;
+    }
+    header{
+        font-size: 175%;
+    }
+    .imgWrapper, img{
+        max-height: 55%;
+        max-width: 65%;
+    }
+    article{
+        padding: 10px;
+    }
+    
+    #contact-info, #contact-info > a, footer, footer > a{
+        font-size: 90%;
+    }
+}
+
+* {
+    transition: ease-in-out 0.5s;
 }
