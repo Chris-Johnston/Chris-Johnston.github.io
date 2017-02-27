@@ -4,8 +4,6 @@ title: About Me
 permalink: /about/
 ---
 
-# About Me
-
 I am a University of Washington Bothell student who likes to make things in my spare time.
 
 In terms of programming, I've worked with
