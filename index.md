@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About Me
-permalink: /about/
 ---
 
 I am a University of Washington Bothell student who likes to make things in my spare time.
