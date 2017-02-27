@@ -1,0 +1,117 @@
+---
+#test
+---
+@import "minima";
+
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed');
+
+$color-accent-gradient-left: #63b6db;
+$color-accent-gradient-right: #309dcf;
+$color-accent-article-border: #63b6db;
+
+$color-accent-highlight-text: rgba(92, 182, 219, 1);
+$color-accent-highlight-hover: rgba(92, 182, 219, 0.8);
+
+$color-code-background: #EEEEEE;
+$color-stripe-background: #EEEEEE;
+$color-stripe: #DEDEDE;
+$color-main-background: white;
+
+$color-headerfooter-title: white;
+$color-headerfooter-text: rgba(255,255,255,0.75);
+$color-headerfooter-highlight: rgba(255,255,255,0.85);
+
+$color-menu-text-backer: #555;
+
+.site-header 
+{
+	border-top: 0;
+	border-bottom:0;
+	color: $color-headerfooter-text;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#63b6db+0,309dcf+100;Blue+3D+%234 */
+    background: $color-accent-gradient-left; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, $color-accent-gradient-left 0%, $color-accent-gradient-right 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, $color-accent-gradient-left 0%,$color-accent-gradient-right 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, $color-accent-gradient-left 0%,$color-accent-gradient-right 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-accent-gradient-left', endColorstr='$color-accent-gradient-right',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    box-shadow: rgba(0,0,0,0.4) 0px 2px 5px;
+}
+
+@media screen and (max-width: 600px)
+{
+	.site-nav .trigger .page-link
+	{
+		color: $color-menu-text-backer !important;
+	}
+}
+
+.page-content
+{
+  background-color: $color-stripe-background;
+  background: repeating-linear-gradient(45deg, $color-stripe-background, $color-stripe-background 5px, $color-stripe 5px, $color-stripe 6px);  
+}
+
+.page-content > .wrapper
+{
+	font-family: 'Roboto Condensed', sans-serif !important;
+	background-color: $color-main-background;
+	border: 0.25px solid $color-accent-article-border;
+	box-shadow: rgba(0,0,0,0.15) 0 0 20px;
+	padding: 20px;
+}
+
+.site-title
+{
+	font-family: 'Oswald', sans-serif;
+	color: $color-headerfooter-title !important;
+}
+
+.site-nav .page-link 
+{
+	color: $color-headerfooter-title;
+}
+
+strong, em, a
+{
+	color: $color-accent-highlight-text;
+}
+
+a:hover {
+	color: $color-accent-highlight-hover;
+    cursor: pointer;
+	}
+	
+.site-footer
+{
+	border-top: 0;
+	color:$color-headerfooter-text;
+    font-weight: 300;
+	background: $color-accent-gradient-left; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, $color-accent-gradient-left 0%, $color-accent-gradient-right 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, $color-accent-gradient-left 0%,$color-accent-gradient-right 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, $color-accent-gradient-left 0%,$color-accent-gradient-right 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-accent-gradient-left', endColorstr='$color-accent-gradient-right',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    box-shadow: rgba(0,0,0,0.4) 0px -2px 5px;
+}
+
+.footer-col-wrapper
+{
+	color: $color-headerfooter-text;
+}
+
+.site-footer a 
+{
+	color: $color-headerfooter-highlight;
+}
+
+.post-title 
+{
+	padding-bottom: 5px;
+	border-bottom: 0.25px solid $color-accent-article-border;
+    margin-bottom: 5px;
+}
+
+pre, code 
+{
+	background-color: $color-code-background;
+}
