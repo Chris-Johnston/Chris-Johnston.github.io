@@ -3,7 +3,25 @@ layout: page
 title: About Me
 ---
 
-## Pictures
+I am a University of Washington Bothell student who likes to make things in my spare time.
+
+In terms of programming, I've worked with
+- Arduino
+- C++
+- C#
+- HTML, CSS, Javascript
+- Java
+- PHP
+- Python
+- SQL
+- XAML
+- XML
+
+_And I'm probably forgetting something._
+
+I enjoy using both the Arduino and Raspberry Pi platforms for making things.
+
+## Etc. Stuff I've Made
 
 Low Battery, a game created for GBJam 4 in 10 days from scratch.
 
@@ -34,22 +52,4 @@ An image of my Internet-Xmas-Tree in use.
 
 <img alt="Xmas Tree Lights" src="images/xmas tree.jpg" style="width:500px;"/>
 
-I am a University of Washington Bothell student who likes to make things in my spare time.
-
-In terms of programming, I've worked with
-- Arduino
-- C++
-- C#
-- HTML, CSS, Javascript
-- Java
-- PHP
-- Python
-- SQL
-- XAML
-- XML
-
-_And I'm probably forgetting something._
-
-I enjoy using both the Arduino and Raspberry Pi platforms for making things.
-
-Please refer to [my Github page](https://github.com/chris-johnston) to check out some of the things I've made.
+Please refer to [my Github page](https://github.com/chris-johnston) to check out some of the other things I've made.
