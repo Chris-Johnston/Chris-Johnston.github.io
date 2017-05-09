@@ -14,6 +14,13 @@ The Internet-controlled Xmas tree from the future. 600 RGB leds that animate and
 
 <img alt="Xmas Tree Lights" src="images/xmas tree.jpg" style="width:500px;"/>
 
+### PatioLights
+Link: [PatioLigthsHost](https://github.com/Chris-Johnston/PatioLightsHost) [PatioLightsClient](https://github.com/Chris-Johnston/PatioLightsClient)
+
+A project derived from Internet-Xmas-Tree. Festive RGB lighting for any day of the year!
+
+<img src="https://fat.gfycat.com/CostlyAggravatingGoldfish.gif" width="750" alt="Gif of use"/>
+
 ### BinaryKeyboard
 
 A two-button, mechanical keyboard with backlighting and a screen. Also, it types in binary.
