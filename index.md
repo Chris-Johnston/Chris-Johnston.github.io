@@ -3,53 +3,46 @@ layout: page
 title: About Me
 ---
 
-I am a University of Washington Bothell student who likes to make things in my spare time.
+I am a student who makes things in my free time. GitHub: [Chris-Johnston](https://github.com/chris-johnston).
 
-In terms of programming, I've worked with
-- Arduino
-- C++
-- C#
-- HTML, CSS, Javascript
-- Java
-- PHP
-- Python
-- SQL
-- XAML
-- XML
+## Things I've Made
 
-_And I'm probably forgetting something._
+### Internet-Xmas-Tree
+Link: [Internet-Xmas-Tree](https://github.com/Chris-Johnston/Internet-Xmas-Tree)
 
-I enjoy using both the Arduino and Raspberry Pi platforms for making things.
+The Internet-controlled Xmas tree from the future. 600 RGB leds that animate and change colors.
 
-## Etc. Stuff I've Made
+<img alt="Xmas Tree Lights" src="images/xmas tree.jpg" style="width:500px;"/>
+
+### BinaryKeyboard
+
+A two-button, mechanical keyboard with backlighting and a screen. Also, it types in binary.
+
+Link: [BinaryKeyboard](https://github.com/Chris-Johnston/BinaryKeyboard) [Build Log]({% post_url 2017-04-21-binary-keyboard-build-log %})
+
+![Binary Keyboard Typing GIF](/images/binarybuild/maingif.gif)
+
+### ErgoDox Build
+
+My ErgoDox mechanical keyboard with Cherry MX Clear switches that I sourced parts for and assembled. [Build Log]({% post_url 2017-03-08-ergodox-build-log %})
+
+<img alt="Ergodox mechanical keyboard" src="images/ergodox.jpg" style="width:500px;"/>
+<br />
+
+
+### Etc.
 
 Low Battery, a game created for GBJam 4 in 10 days from scratch.
 
 <img alt="Low Battery Screenshot" src="images/lowbattery.gif" style="width:200px;"/>
 <br />
 
-A game of Snake, using an Arduino and custom-made controller and display.
+Arduino implementation of Snake, using a few hand-made circuitboards.
 
 <img alt="Snake Game PCB" src="images/snake.jpg" style="width:500px;"/>
 <br />
 
-A clock whose purpose is to inform onlookers that it is not a bomb.
+A clock. (Not a bomb!)
 
 <img alt="THIS IS NOT A BOMB" src="images/notabomb2.JPG" style="width:500px;"/>
 <br />
-
-My ErgoDox mechanical keyboard with Cherry MX Clear switches that I sourced parts for and assembled.
-
-<img alt="Ergodox mechanical keyboard" src="images/ergodox.jpg" style="width:500px;"/>
-<br />
-
-Some RGB lights being controlled via Arduino.
-
-<img alt="RGB Lights" src="images/rgb lights.jpg" style="width:300px;"/>
-<br />
-
-An image of my Internet-Xmas-Tree in use.
-
-<img alt="Xmas Tree Lights" src="images/xmas tree.jpg" style="width:500px;"/>
-
-Please refer to [my Github page](https://github.com/chris-johnston) to check out some of the other things I've made.
