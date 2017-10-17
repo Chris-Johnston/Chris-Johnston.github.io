@@ -3,12 +3,16 @@ layout: page
 title: About Me
 ---
 
-I am a student who makes things in my free time. GitHub: [Chris-Johnston](https://github.com/chris-johnston).
+I am a UWB student who makes stuff in his free time. Most of projects are hosted on my GitHub: [Chris-Johnston](https://github.com/chris-johnston).
+
+_This website hasn't been maintained in a while, but here is a brief snippet of some projects I've worked on._
 
 ## Things I've Made
 
 ### Internet-Xmas-Tree
 Link: [Internet-Xmas-Tree](https://github.com/Chris-Johnston/Internet-Xmas-Tree)
+
+Patterns Demo: [Link](https://www.youtube.com/watch?v=5M3lig-fI4s)
 
 The Internet-controlled Xmas tree from the future. 600 RGB leds that animate and change colors.
 
