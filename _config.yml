@@ -3,8 +3,6 @@
 title: Chris Johnston
 # use minima theme with custom CSS
 theme: minima
-description: >
-    Personal website of Chris Johnston.
 baseurl: ""
 url: "http://chrisjohnston.me/"
 github_username: Chris-Johnston
