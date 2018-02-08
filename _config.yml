@@ -2,7 +2,8 @@
 
 title: Chris Johnston
 website_title: "chris-johnston.me"
-theme: names_are_hard
+# theme: names_are_hard
+remote_theme: "Chris-Johnston/names_are_hard"
 baseurl: ""
 url: "http://chris-johnston.me/"
 github_username: Chris-Johnston
