@@ -1,8 +1,8 @@
 # Jekyll meta information
 
 title: Chris Johnston
-# use minima theme with custom CSS
-theme: minima
+website_title: "chris-johnston.me"
+theme: names_are_hard
 baseurl: ""
-url: "http://chrisjohnston.me/"
+url: "http://chris-johnston.me/"
 github_username: Chris-Johnston
