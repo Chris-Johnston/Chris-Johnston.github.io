@@ -5,8 +5,9 @@ layout: home
 This is a site that I use to highlight projects that I've been working / have
 worked on, when more than a README is needed.
 
-This page is very inconsistently updated. You'd be better of looking
-at [what I have posted on my GitHub page. Username: Chris-Johnston.][cjgithub]
+This page is very inconsistently updated. To see what I'm currently working on 
+you'd be better of looking at
+ [what I have posted on my GitHub page. Username: Chris-Johnston.][cjgithub]
 
 Some projects of interest:
   - The Binary Keyboard. It's a mechanical backlit keyboard that types
