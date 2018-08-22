@@ -46,7 +46,9 @@ Here are some of the projects I've worked on:
     
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4v70QhtXlvY?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
- - I worked in a team to make a game in my Introduction to Game Development class. [It's called Grappel, and can be found here. Try the web build!][grappel] We were voted as one of the most popular games.
+ - I worked in a team to make a game in my Introduction to Game Development class. [It's called Grappel, and can be found here. Try the web build!][grappel] We were voted as one of the most popular games in our class.
+ 
+  - While I am not a web design expert, [this site uses my own Jekyll style, called names_are_hard, which you can find here.][names-are-hard]
 
 
 [cjgithub]: https://github.com/Chris-Johnston
@@ -63,3 +65,4 @@ Here are some of the projects I've worked on:
 [uwbhacks-trophy]: {{ site.baseurl }}/images/uwbhackstrophy.jpg
 [easier68k]: https://github.com/Chris-Johnston/Easier68k
 [grappel]: https://grappel.ninja
+[names-are-hard]: https://github.com/Chris-Johnston/names_are_hard
