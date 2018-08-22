@@ -7,7 +7,7 @@ This is a site that I use to highlight projects that I've been working / have
 worked on, when more than a README is needed.
 
 This page is very inconsistently updated. To see what I'm currently working on
-you'd be better of looking at
+you'd be better off looking at
  [what I have posted on my GitHub page. Username: Chris-Johnston.][cjgithub]
 
 Some projects of interest:
@@ -24,14 +24,14 @@ Some projects of interest:
     - I also have [contributed to the Discord.NET library.][dnetcontrib] I've done refactoring, unit tests,
       developed new functionality, and helped contribute to the documentation.
   - I made a minimal [reverse-engineered library for driving Chinese knockoff IOT lightbulbs using Wireshark.][bulbgit] Currently it can turn lights on and off in any color.
-  - I'm [currently developing a Python library for assembling, disassembling and simulating the Motorola 68K processor][easier68k] to replace legacy software that was used at my school, with the goal of more flexible
+  - I'm [currently developing a Python library (Easier68k) for assembling, disassembling and simulating the Motorola 68K processor][easier68k] to replace legacy software that was used at my school, with the goal of more flexible
   functionality and much better cross-platform support.
   - I contributed to my school's hackathon, by providing example code for
     [Discord, Twitter, and Spotify bots in Python and C#][uwbhacks-barebones]. I also
     [wrote up documentation and included relevant topics in our documentation.][uwbhacks]
+    During the event, I lead the group of tutors to help participants with coding questions.
     - I also [laser cut some trophies.][uwbhacks-trophy]
-
-
+ - I worked in a team to make a game in my Introduction to Game Development class. [It's called Grappel, and can be found here. Try the web build!][grappel] We were voted as one of the most popular games.
 
 [cjgithub]: https://github.com/Chris-Johnston
 [binkeyboardgit]: https://github.com/Chris-Johnston/BinaryKeyboard
@@ -46,3 +46,4 @@ Some projects of interest:
 [uwbhacks-barebones]: https://github.com/UWB-ACM
 [uwbhacks-trophy]: {{ site.baseurl }}/images/uwbhackstrophy.jpg
 [easier68k]: https://github.com/Chris-Johnston/Easier68k
+[grappel]: https://grappel.ninja
