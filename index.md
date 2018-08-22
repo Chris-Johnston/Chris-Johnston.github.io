@@ -10,12 +10,21 @@ This page is very inconsistently updated. To see what I'm currently working on
 you'd be better off looking at
  [what I have posted on my GitHub page. Username: Chris-Johnston.][cjgithub]
 
-Some projects of interest:
+Here are some of the projects I've worked on:
+
+![Binary keyboard on hackaday](https://chris-johnston.me/images/binarybuild/hackaday.jpg)
+
   - The Binary Keyboard. It's a mechanical backlit keyboard that types
   in binary. It also has a screen. [Git Repo][binkeyboardgit] [Build Log]({% post_url 2017-04-21-binary-keyboard-build-log %})
+  
+<iframe width="300" height="315" src="https://www.youtube.com/embed/rzU7GU4T2Bk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  
   - The Internet Xmas Tree. I used a Raspberry Pi and some Neopixels to control
   my Xmas tree. This was exposed to the Internet and people were invited to customize the lighting of our tree. [I later did (more or less) the same thing on the front porch.][patiogit]
   [Internet-Xmas-Tree Git Repo][xmasgit] [PatioLightsHost Git][patiogit]
+  
+  ![Discord Achievement Bot](https://camo.githubusercontent.com/fc6534de713b13e051180bfc2707a8440758be58/687474703a2f2f692e696d6775722e636f6d2f396c7a7778366a2e676966)
+  
   - Discord bots. I have a few, which are suited for different purposes.
     - I have some written in C# and Python(3.6) intended for
     collaboration with my peers and other miscellaneous utilities for our servers.
@@ -26,12 +35,19 @@ Some projects of interest:
   - I made a minimal [reverse-engineered library for driving Chinese knockoff IOT lightbulbs using Wireshark.][bulbgit] Currently it can turn lights on and off in any color.
   - I'm [currently developing a Python library (Easier68k) for assembling, disassembling and simulating the Motorola 68K processor][easier68k] to replace legacy software that was used at my school, with the goal of more flexible
   functionality and much better cross-platform support.
+ 
+![Laser cut hackathon trophies.]({{ site.baseurl }}/images/uwbhackstrophy.jpg)
+  
   - I contributed to my school's hackathon, by providing example code for
     [Discord, Twitter, and Spotify bots in Python and C#][uwbhacks-barebones]. I also
     [wrote up documentation and included relevant topics in our documentation.][uwbhacks]
     During the event, I lead the group of tutors to help participants with coding questions.
-    - I also [laser cut some trophies.][uwbhacks-trophy]
+    - I also laser cut these trophies.
+    
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4v70QhtXlvY?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
  - I worked in a team to make a game in my Introduction to Game Development class. [It's called Grappel, and can be found here. Try the web build!][grappel] We were voted as one of the most popular games.
+
 
 [cjgithub]: https://github.com/Chris-Johnston
 [binkeyboardgit]: https://github.com/Chris-Johnston/BinaryKeyboard
