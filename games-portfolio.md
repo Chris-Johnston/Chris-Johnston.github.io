@@ -25,7 +25,7 @@ momentum as you fly across the screen.
 
 ![Screenshot of Grappel gameplay.][grappel-gameplay]
 
-<iframe width="560" height="315"  src="https://www.youtube.com/embed/4v70QhtXlvY?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="75%" margin="10px auto" height="300px" display="block" src="https://www.youtube.com/embed/4v70QhtXlvY?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 I worked on this project with a group of my student
 peers in an agile team for our Introduction to Game Development class. We used the Unity game engine in C#.
