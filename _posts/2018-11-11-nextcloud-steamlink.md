@@ -28,12 +28,16 @@ https://mcd1992.blogspot.com/2015/10/alright-this-was-lot-easier-than-i.html
 
 # 2. Setting up the Steam Link
 
+turn off sleep mode, so it doesn't disconnect from the ethernet
+
 We want to have ssh access without always having a usb stick plugged in,
 and should have a non-root user.
 
 Add a new user, and set a password
 
 `adduser chris`
+
+mount the user's home dir by editing etc/fstab
 
 TODO: Getting issue where the filesystem is ro, so home cannot be mounted
 TODO: missing usermod
@@ -47,7 +51,7 @@ _will_ reset the root password, so either modify that file,
 or just don't restart the link with that usb in place.
 
 Permanently enable root.
-
+  
 This script would start
 `/usr/sbin/sshd`, so this should be added to the startup script at the very end
 
