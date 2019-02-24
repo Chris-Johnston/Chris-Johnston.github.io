@@ -35,7 +35,7 @@ Here are some of the projects I've worked on:
     - I also have [contributed to the Discord.NET library.][dnetcontrib] I've done refactoring, unit tests,
       developed new functionality, and helped contribute to the documentation.
   - I made a minimal [reverse-engineered library for driving Chinese knockoff IOT lightbulbs using Wireshark.][bulbgit] Currently it can turn lights on and off in any color.
-  - I'm [currently developing a Python library (Easier68k) for assembling, disassembling and simulating the Motorola 68K processor][easier68k] to replace legacy software that was used at my school, with the goal of more flexible
+  - I [(occasionally) develop a Python library called Easier68k for assembling, disassembling and simulating the Motorola 68K processor][easier68k] to replace legacy software that was used at by school, with the goal of more flexible
   functionality and much better cross-platform support.
  
 ![Laser cut hackathon trophies.]({{ site.baseurl }}/images/uwbhackstrophy.jpg)
