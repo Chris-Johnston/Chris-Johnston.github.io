@@ -1,10 +1,9 @@
 ---
 layout: page
-title: Games Portfolio - Chris Johnston
+title: Game Projects
 ---
 
-Hi! I'm a student at the University of Washington in the Computer Science and Software Engineering 
-major. Here are some of the games that I've worked on.
+Here are some of the games that I've worked on.
 [Click here to see the broader scope of software projects (not just games) that I've worked on.]({{ site.baseurl }}/index)
 
 # Grappel (Spring 2018)
