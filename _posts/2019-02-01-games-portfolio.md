@@ -41,9 +41,9 @@ I was in charge of:
 - Administering to our production and testing MSSQL databases, hosted in Azure.
 - Putting out fires related to our front-end, like setting up a Typescript build pipeline,
 or registering our domain name.
-- The "amazing" art assets that this game has to offer.
+- The "amazing" art assets that this game has to offer. (Including that logo, which I'm very proud of.)
 - Extensive code review on every feature that was implemented, and managing tasks on GitHub.
-- Developing a secure authentication flow using a HMAC512 hashing algorithm.
+- Developing a secure authentication flow using a HMAC SHA256 hashing algorithm.
 - Integrating with third party services, like Twilio for SMS notifications, and Discord
 for webhook notifications.
 - Designing and implementing the race game, as well as the training mechanics as a whole.
