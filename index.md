@@ -17,13 +17,6 @@ you'd be better off looking at
   - I [(occasionally) develop a Python library called Easier68k for assembling, disassembling and simulating the Motorola 68K processor][easier68k] to replace legacy software that was used at by school, with the goal of more flexible
   functionality and much better cross-platform support.
  
-![Laser cut hackathon trophies.]({{ site.baseurl }}/images/uwbhackstrophy.jpg)
-  
-  - I contributed to my school's hackathon, by providing example code for
-    [Discord, Twitter, and Spotify bots in Python and C#][uwbhacks-barebones]. I also
-    [wrote up documentation and included relevant topics in our documentation.][uwbhacks]
-    During the event, I lead the group of tutors to help participants with coding questions.
-    - I also laser cut these trophies.
     
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4v70QhtXlvY?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
