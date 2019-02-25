@@ -6,11 +6,13 @@ title: chris-johnston.me
 This is a site that I use to highlight projects that I've been working / have
 worked on, when more than a README is needed.
 
-To see my [portfolio of the games I've worked on, click here.]({{ site.baseurl }}/games-portfolio)
-
 This page is very inconsistently updated. To see what I'm currently working on
 you'd be better off looking at
- [what I have posted on my GitHub page. Username: Chris-Johnston.][cjgithub]
+[what I have posted on my GitHub page. Username: Chris-Johnston.][cjgithub]
+
+## Projects
+
+{% include project_list.html %}
 
 Here are some of the projects I've worked on:
 

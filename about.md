@@ -7,6 +7,7 @@ title: About
 I'm Chris, and I'm a software engineer.
 This is the site that I infrequently update to
 document some of the projects that I work on in my spare time.
+I also enjoy mechanical keyboards.
 
 I can be reached at: `chjohnston [at] protonmail [dot] com`
 Please do not use this email for solicitation.
