@@ -13,7 +13,7 @@ you'd be better off looking at
 ## Projects
 
 {% include project_list.html %}
-s
+
   
   ![Discord Achievement Bot](https://camo.githubusercontent.com/fc6534de713b13e051180bfc2707a8440758be58/687474703a2f2f692e696d6775722e636f6d2f396c7a7778366a2e676966)
   
