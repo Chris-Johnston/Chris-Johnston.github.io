@@ -1,10 +1,53 @@
 ---
-layout: page
+date: 2019-02-01
+layout: post
 title: Game Projects
+description: A listing of the games I've made for classes and Game Jams.
+tag: project
+permalink: /games/
 ---
 
 Here are some of the games that I've worked on.
-[Click here to see the broader scope of software projects (not just games) that I've worked on.]({{ site.baseurl }}/index)
+[The broader scope of software projects (not just games) that I've worked on can be found on the Projects page.]({{ site.baseurl }}/projects)
+
+# PGTRTKD3000DGOTY (Fall 2018)
+
+![Logo of PGTRTKD3000DGOTY](https://chris-johnston.me/PGTRTKD3000DGOTY/index_files/logo_small.png)
+
+![Screenshot of PGTRTKD3000DGOTY]({{ site.baseurl }}/images/games-portfolio/pgtr.png)
+
+### [Play now at https://chris-johnston.me/PGTRTKD3000DGOTY/](https://chris-johnston.me/PGTRTKD3000DGOTY/)
+
+[Source code hosted on GitHub.](http://github.com/Chris-Johnston/PGTRTKD3000DGOTY)
+
+**Pet GTR Turbo Kart Drift 3000 _!!!_ Deluxe Game of the Year** (or **PGTRTKD3000DGOTY**, for short) is an online pet training game
+similar in concept to a Tamagotchi.
+The goal of the game is very simple, adopt a pet and keep training it to improve it's abilities. Then, race
+it for the best time to get placed on the top of the global leaderboard.
+
+This was a final project in both my Cloud Computing and Database classes.
+Our requirements were to create an application:
+- Hosted using public cloud services, like Azure or AWS.
+- That is interactive.
+- That stores data in a database, like MSSQL.
+
+In a group of 3, we created this application using ASP.NET Core in C#, hosted on Azure App Services.
+_(The current version is completely static, for the sake of demonstration.)_
+We used Bootstrap CSS, Typescript, and Razor pages to build out front-end.
+
+I was in charge of:
+- Managing the project as a whole, among my two other group members.
+- Setting up our CI/CD pipeline using Azure App Services, so that we could effortlessly release code.
+- Administering to our production and testing MSSQL databases, hosted in Azure.
+- Putting out fires related to our front-end, like setting up a Typescript build pipeline,
+or registering our domain name.
+- The "amazing" art assets that this game has to offer.
+- Extensive code review on every feature that was implemented, and managing tasks on GitHub.
+- Developing a secure authentication flow using a HMAC512 hashing algorithm.
+- Integrating with third party services, like Twilio for SMS notifications, and Discord
+for webhook notifications.
+- Designing and implementing the race game, as well as the training mechanics as a whole.
+- Writing unit tests, where we could easily do so.
 
 # Grappel (Spring 2018)
 

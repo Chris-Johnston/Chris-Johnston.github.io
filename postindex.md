@@ -1,7 +1,7 @@
 ---
-#index page for website
-#intentionally left blank, this is populated by any blog posts
 title: Posts
-layout: home
+layout: post
 permalink: /posts/
 ---
+
+{% include post_list.html %}
