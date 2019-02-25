@@ -14,17 +14,6 @@ you'd be better off looking at
 
 {% include project_list.html %}
 
-  
-  ![Discord Achievement Bot](https://camo.githubusercontent.com/fc6534de713b13e051180bfc2707a8440758be58/687474703a2f2f692e696d6775722e636f6d2f396c7a7778366a2e676966)
-  
-  - Discord bots. I have a few, which are suited for different purposes.
-    - I have some written in C# and Python(3.6) intended for
-    collaboration with my peers and other miscellaneous utilities for our servers.
-    [CSSBot C# Git Repo][cssbotgit] [CSSBot Python Git Repo][cssbotpygit]
-    - Using Magick.NET, I made [a bot to generate xbox-styled achievement popups.][achievementgit]
-    - I also have [contributed to the Discord.NET library.][dnetcontrib] I've done refactoring, unit tests,
-      developed new functionality, and helped contribute to the documentation.
-  - I made a minimal [reverse-engineered library for driving Chinese knockoff IOT lightbulbs using Wireshark.][bulbgit] Currently it can turn lights on and off in any color.
   - I [(occasionally) develop a Python library called Easier68k for assembling, disassembling and simulating the Motorola 68K processor][easier68k] to replace legacy software that was used at by school, with the goal of more flexible
   functionality and much better cross-platform support.
  

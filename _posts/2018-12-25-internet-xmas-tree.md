@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Internet Xmas Tree
-description: An internet-enabled RGB Xmas tree.
+description: An internet-enabled animated RGB Xmas tree.
 github_url: https://github.com/Chris-Johnston/Internet-Xmas-Tree
 github_short: Chris-Johnston/Internet-Xmas-Tree
 date: 2018-12-25
