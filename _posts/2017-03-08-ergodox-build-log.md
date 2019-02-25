@@ -3,6 +3,7 @@ layout: post
 title: My Ergodox Build Log
 date: 2017-03-08
 categories: website
+description: How I built my own Ergodox keyboard.
 ---
 
 ![Ergodox Build Log](/images/ergodoxbuild/ergodox (5).jpg)
