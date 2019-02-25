@@ -13,19 +13,7 @@ you'd be better off looking at
 ## Projects
 
 {% include project_list.html %}
-
-Here are some of the projects I've worked on:
-
-![Binary keyboard on hackaday](https://chris-johnston.me/images/binarybuild/hackaday.jpg)
-
-  - The Binary Keyboard. It's a mechanical backlit keyboard that types
-  in binary. It also has a screen. [Git Repo][binkeyboardgit] [Build Log]({% post_url 2017-04-21-binary-keyboard-build-log %})
-  
-<iframe width="300" height="315" src="https://www.youtube.com/embed/rzU7GU4T2Bk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  
-  - The Internet Xmas Tree. I used a Raspberry Pi and some Neopixels to control
-  my Xmas tree. This was exposed to the Internet and people were invited to customize the lighting of our tree. [I later did (more or less) the same thing on the front porch.][patiogit]
-  [Internet-Xmas-Tree Git Repo][xmasgit] [PatioLightsHost Git][patiogit]
+s
   
   ![Discord Achievement Bot](https://camo.githubusercontent.com/fc6534de713b13e051180bfc2707a8440758be58/687474703a2f2f692e696d6775722e636f6d2f396c7a7778366a2e676966)
   
