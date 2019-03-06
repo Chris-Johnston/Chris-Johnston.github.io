@@ -1,6 +1,5 @@
 ---
 layout: home
-title: chris-johnston.me
 ---
 
 This is a site that I use to highlight projects that I've been working / have
