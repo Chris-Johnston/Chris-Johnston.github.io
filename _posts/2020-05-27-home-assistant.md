@@ -298,14 +298,14 @@ Some benefits that this has over something like my door monitor project:
 
 In an afternoon I was able to solder up a board with a bunch of sensors:
 
-![ESPHome sensor board for the plants.][{{ site.baseurl }}/images/ha/plant-sensor1.jpg]
+![ESPHome sensor board for the plants.]({{ site.baseurl }}/images/ha/plant-sensor1.jpg)
 
 I use soil moisture sensors that stick directly into the plant's soil to read out a relative
 humidity. It outputs an analog signal corresponding to the humidity.
 The value doesn't mean a whole lot unless it's calibrated, which I haven't bothered to do
 carefully yet.
 
-![Sensor sticking directly into the plant pot.][{{ site.baseurl }}/images/ha/plant-sensor2.jpg]
+![Sensor sticking directly into the plant pot.]({{ site.baseurl }}/images/ha/plant-sensor2.jpg)
 
 # What's next?
 
