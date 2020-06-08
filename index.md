@@ -11,4 +11,4 @@ you'd be better off looking at
 
 ## Projects
 
-{% include project_list.html %}
+{% include post_list.html %}
