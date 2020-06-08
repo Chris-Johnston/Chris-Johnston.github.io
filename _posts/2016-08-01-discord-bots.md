@@ -18,23 +18,6 @@ I either use the [Discord.Net][dnet] or [discord.py][dpy] libraries.
 This bot generates Xbox-styled achievement popups using Magick.NET.
 At the time of writing, it's in nearly 200 servers with a total of 97,000 users.
 
-## Discord.Net Contributions
-
-I have contributed to the open source [Discord.Net][dnet]
-library.
-
-These contributions include:
-- [Refactoring existing features](https://github.com/discord-net/Discord.Net/pull/743)
-- [Updating the AppVeyor CI pipeline to support Ubuntu builds](https://github.com/discord-net/Discord.Net/pull/1157)
-- [Significant design updates](https://github.com/discord-net/Discord.Net/pull/1004)
-- [Adding unit tests](https://github.com/discord-net/Discord.Net/pull/967)
-- [Improving command parsing](https://github.com/discord-net/Discord.Net/pull/943)
-- [Updating the API to match new features](https://github.com/discord-net/Discord.Net/pull/1165)
-- At one point hosting a backup of the documentation using AWS S3, when the primary site was unavailable
-
-In addition to code review and
-[other Pull Requests](https://github.com/discord-net/Discord.Net/pulls?page=1&q=is%3Apr+author%3AChris-Johnston&utf8=%E2%9C%93).
-
 ## CSSBot and CSSBot_Py
 
 [CSSBot GitHub Repo](https://github.com/Chris-Johnston/CSSBot)

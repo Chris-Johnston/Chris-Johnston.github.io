@@ -3,7 +3,9 @@ layout: post
 title: Adventures in Home Automation and DIY Security
 date: 2020-05-27
 categories: home-assistant
+tag: project
 description: How I added (possibly too much) automation to my apartment.
+image: /images/ha/rpi-servers.jpg
 ---
 
 This is a summary of my experience setting up my own home automation
@@ -314,7 +316,7 @@ My TODO list for home automation stuff includes:
  - Reverse engineering the IR protocol used by my LG air conditioner, so that I can manage my AC (even more) remotely
  - Making at least one more plant sensor board, for other parts of the house
 
-[iot-lightbulbs]: todo
+[iot-lightbulbs]: {% post_url 2016-10-12-hacking-a-lightbulb %}
 [lfnw]: https://linuxfestnorthwest.org
 [ha-integrations]: https://www.home-assistant.io/integrations/
 [ha]: https://www.home-assistant.io

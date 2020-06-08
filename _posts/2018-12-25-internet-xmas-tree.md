@@ -10,7 +10,7 @@ image: /images/xmas tree.jpg
 ---
 
 The Internet Xmas Tree has been a project of mine since 2015.
-Since then, each year I've brought it back and made improves
+Since then, each year I've brought it back and made improvements
 from the previous iteration.
 
 <iframe width="300" height="315" src="https://www.youtube.com/embed/rzU7GU4T2Bk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
