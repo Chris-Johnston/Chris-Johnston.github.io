@@ -6,7 +6,6 @@ github_short: "Chris-Johnston/BinaryKeyboard"
 github_url: "https://github.com/Chris-Johnston/BinaryKeyboard"
 date: 2017-04-21
 categories: Keyboards
-tag: project
 image: /images/binarybuild/hackaday.jpg
 ---
 

@@ -4,7 +4,6 @@ title: Hacking an IOT Lightbulb
 description: How I reverse engineered the protocol used by some cheap WiFi lightbulbs, and made by own client application.
 github_url: https://github.com/Chris-Johnston/PythonWifiBulb
 github_short: Chris-Johnston/PythonWifiBulb
-tag: project
 ---
 
 I was given an internet-connected RGB lightbulb around the time that
