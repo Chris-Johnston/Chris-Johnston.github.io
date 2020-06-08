@@ -3,7 +3,6 @@ layout: post
 title: Adventures in Home Automation and DIY Security
 date: 2020-05-27
 categories: home-assistant
-tag: project
 description: How I added (possibly too much) automation to my apartment.
 image: /images/ha/rpi-servers.jpg
 ---
@@ -159,7 +158,7 @@ The Flask server acts as a proxy to forward this information along to
 multiple sources, including Home Assistant but also a Discord webhook.
 The Discord webhook was used as a faster and free alternative to Twilio SMS notifications.
 
-![Image of the home assistant integration.]({{ site.baseurl }}/images/ha/home_assistant_integration.jpg)
+![Image of the home assistant integration.]({{ site.baseurl }}/images/ha/home_assistant_integration.png)
 
 Once this was integrated with Home Assistant, I could start doing some
 pretty cool stuff with it.
@@ -167,7 +166,7 @@ Some automations that I had configured around this will text me if the door
 or lock state changes if I'm away from the house, and also text me if I
 have been away from the house for more than a few minutes without locking up.
 
-![Image of notification sent if I forget to lock up.]({{ site.baseurl }}/images/ha/sms_notification.jpg)
+![Image of notification sent if I forget to lock up.]({{ site.baseurl }}/images/ha/sms_notifications.jpg)
 
 One clear benefit of this over ZoneMinder is that the notifications have
 a much lower false positive rate. This way I'm inclined to trust the

@@ -3,7 +3,6 @@ date: 2018-12-01
 layout: post
 title: Game Projects
 description: A listing of the games I've made for classes and Game Jams.
-tag: project
 permalink: /games/
 ---
 

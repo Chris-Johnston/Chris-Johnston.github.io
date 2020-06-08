@@ -3,7 +3,6 @@ layout: post
 title: Discord Bots
 description: A brief summary of the work I've done with Discord Bots and the Discord API.
 date: 2016-08-01
-tag: project
 image: https://camo.githubusercontent.com/fc6534de713b13e051180bfc2707a8440758be58/687474703a2f2f692e696d6775722e636f6d2f396c7a7778366a2e676966
 ---
 
