@@ -1,46 +1,51 @@
 ---
 layout: post
-title: Adventures in Home Automation and DIY Securty
+title: Adventures in Home Automation and DIY Security
 date: 2020-05-27
 categories: home-assistant
-description: How I added (a bit too much) automation to my apartment.
+description: How I added (possibly too much) automation to my apartment.
 ---
 
-From knowing so much anecdotally about the problems with IOT,
-I've successfully avoided this trend (for now).
- - My apartment uses a normal lock and key, not RFID with a master key.
- - As far as I know, no digital assistants around me are listening for keywords.
+This is a summary of my experience setting up my own home automation
+and security system using Home Assistant and ZoneMinder.
+
+From anecdotal evidence about the problems with IOT,
+I've successfully avoided this trend (for now):
+ - My apartment uses a normal lock and key, not RFID.
+ - As far as I know, all of my digital assistants are off.
    - I do have an Amazon Echo around somewhere, though I haven't taken it out of the box.
  - I'm not locked-in to paying a monthly fee to review footage captured by my security cameras.
- - Most of my lightbulbs are just regular lightbulbs.
+ - Most of my lightbulbs are just regular single color lightbulbs.
 
 I first started to mess with this stuff when I experimented with
-[RGB IOT Lightbulbs, which I've written a bit about before on this site.][iot-lightbulbs] Maybe this was a slippery slope.
+[RGB IOT Lightbulbs, which I've written a bit about before here.][iot-lightbulbs] Maybe this was a slippery slope.
 
 # The Initial Need for Security
 
-I had just moved into a new apartment, and wanted to set up some level
-of a security system for peace of mind while I'm out at the office.
+I had just moved in to a new apartment, and wanted to set up some
+sort of a security system for peace of mind while I'm out at the office.
 
 I _absolutely_ did not want:
  - A monthly subscription for basic DVR functionality
  - A system that was insecure or publicly accessible
 
 At a minimum, all I needed was a camera to record any activity that 
-happens while I'm not home. Preferably, I'd like for near real-time
-notifications, and the ability to back up this footage remotely
-(should the physical server be stolen). Also, I find it a little creepy
-to be always recording the inside of my house while I'm at home,
-so it would be nice to turn off the camera if I'm at home.
+happens while I'm not home. Features like real-time notifications or
+offsite backups were a plus.
+
+# The Tools
+
+Several free and open source solutions exist for addressing these needs.
 
 ## Home Assistant
 
 [Home Assistant is an open source home automation platform][ha] that lets
 you bridge together various services and devices using self-hosted infrastructure.
+Many users run this on a Raspberry Pi.
 
 I had first learned about Home Assistant from a talk at [LinuxFest Northwest.][lfnw]
 
-The community support around Home Assistant is it's greatest asset.
+I think the community support around Home Assistant is the best part.
 [It integrates with tons of IOT devices and services.][ha-integration],
 
 ## ZoneMinder
@@ -61,10 +66,34 @@ devices, which isn't allowed to connect outside of my LAN.
 Hopefully this will help prevent these devices from showing up
 with a public IP, or from being able to "phone home."
 
-It makes the setup process slightly more complicated, since they are all
-under a different subnet.
+## The Infrastructure
 
-## Home Assistant + ZoneMinder = Profit?
+Both ZoneMinder and Home Assistant _can_ run on Raspberry Pis.
+It's one of the recommended options for Home Assistant.
+
+At one point, I had a stack of 3 Raspberry Pi's sitting on my desk,
+running various services:
+
+![Picture of 3 Raspberry Pis on my desk][{{ site.baseurl }}/images/ha/rpi-servers.jpg]
+
+This worked okay for a while. It was clear that ZoneMinder could benefit
+from something with a bit more power, luckily I was only using a single camera.
+However, after less than a year with this setup, the SD card for that Pi completely
+died. I'm not sure exactly what the cause might have been, but I speculate that the
+amount of disk usage from ZoneMinder could have led to this.
+
+I've since moved my ZoneMinder setup to a Debian server on an old Lenovo
+desktop PC, with an actual hard drive. Moving off of an SD card has other benefits too,
+I now have more storage capacity.
+
+**Why not use a VM in the cloud?** This option could work, but for a few reasons I chose
+against it. 
+Currently I use 433 MHz radio connected to my Home Assistant Pi, which requires access to the GPIO.
+ZoneMinder would generate a lot of traffic and more storage capacity is better, which an add to the expense
+of a VM.
+I already owned all of the equipment that I'm using, so the only operating cost is my electricity bill.
+
+# Home Assistant + ZoneMinder = Profit?
 
 At first it might seem that all I need is ZoneMinder to
 monitor my IP camera while I'm out of the house.
@@ -74,25 +103,23 @@ I definitely could, but this poses a few issues:
 
 Home Assistant helps to address these issues.
 
-Home Assistant's front-end is more robust than ZoneMinder's, so I feel better about exposing
+Home Assistant's frontend is more robust than ZoneMinder's, so I feel better about exposing
 this server publicly. In addition there are integrations available for 2FA, which is more than
 ZoneMinder offers.
 My router supports DDNS, so I'm also able to register a subdomain on my DDNS provider
 and set up HTTPS certs.
 With all of this, I can use Home Assistant's mobile-friendly interface or Android app
 to access my camera remotely.
-
-Since I have access to the HA interface remotely, it can also change the recording status of
-ZoneMinder to toggle between "Monitor" and "Record". In addition, the HA interface can also poll
-ZoneMinder for information about detected events, which is shown in a timeline.
+HA allows me to remotely toggle ZM's recording status, and can
+let me view a timeline of detected events.
 
 <!-- todo include a screenshot of the automation page -->
 
 Using Home Assistant's mobile app, I can track my current location using my phone.
-(Previously I was able to use OwnTracks.)
+(Previously I used OwnTracks.)
 With this, I set up an automation that starts recording on my cameras if I've been outside of a radius
 surrounding my home for more than a few minutes.
-And similiarly, I set up the reverse to disable recording once I return home.
+And similarly, I set up the reverse to disable recording once I return home.
 
 Once that was established, I could expand these automations
 even further. When integrated with Twilio, I could use the
@@ -116,18 +143,29 @@ While I don't anticipate this issue reoccuring, this peace of mind is nice to ha
 
 ## DIY IOT Door Monitor
 
-[door-monitor] is the project I created to accomplish this. (Note that I wasn't aware of ESPHome at the time, which seems like it could do everything here but better.)
+[door-monitor] is the project I created to accomplish this.
+(Note that I wasn't aware of ESPHome at the time, which seems like it could do everything here but better.)
 
 It uses an ESP32 dev board connected to two reed switches which are taped on to the door frame and the door lock. When either one opens, the ESP32
-wakes up from deep sleep mode and logs to a Flask server to collect this data. The Flask server acts as a proxy to forward this information along to
+wakes up from deep sleep mode and logs to a Flask server to collect this data.
+
+![Image of the stuff taped to my door.]({{ site.baseurl }}/images/ha/installed_sensor.jpg)
+
+![Image of the assembled board.]({{ site.baseurl }}/images/ha/assembled_board.jpg)
+
+The Flask server acts as a proxy to forward this information along to
 multiple sources, including Home Assistant but also a Discord webhook.
 The Discord webhook was used as a faster and free alternative to Twilio SMS notifications.
+
+![Image of the home assistant integration.]({{ site.baseurl }}/images/ha/home_assistant_integration.jpg)
 
 Once this was integrated with Home Assistant, I could start doing some
 pretty cool stuff with it.
 Some automations that I had configured around this will text me if the door
 or lock state changes if I'm away from the house, and also text me if I
 have been away from the house for more than a few minutes without locking up.
+
+![Image of notification sent if I forget to lock up.]({{ site.baseurl }}/images/ha/sms_notification.jpg)
 
 One clear benefit of this over ZoneMinder is that the notifications have
 a much lower false positive rate. This way I'm inclined to trust the
@@ -137,7 +175,10 @@ This system works great, just with a few downsides.
 It looks vaguely like a bomb is taped on to my door which doesn't bother me
 too much, but has raised an eyebrow when I had maintenance come by.
 Also, while the ESP32 is known for being very power efficient, the dev
-board that I use isn't. The system will happily burn through 4 AA batteries within a few weeks. I plan on fixing the power consumption issue by using a TinyPICO board instead of a ESP32 dev module.
+board that I use isn't. The system will happily burn through 4 AA batteries within a few weeks.
+I plan on fixing the power consumption issue by using a TinyPICO board instead of a ESP32 dev module, apparently it's
+3.3V regulator uses a lot less power.
+Switching to rechargeable batteries has been a must.
 
 [door-monitor]: https://github.com/Chris-Johnston/door-monitor
 
@@ -149,7 +190,8 @@ that one in every 30 times it was opened, it played a seinfeld bass riff
 over the PA system in the room. We left it running for a few months.
 
 Naturally I wanted the same thing at home. I was able to quickly spin up a
-hacked-together Flask server (using the debug server, because it really doesn't matter) to play sounds over a speaker when triggered over HTTP.
+hacked-together Flask server (using the debug server, because it really doesn't matter)
+to play sounds over a speaker when triggered over HTTP.
 This fit together with the existing system really well.
 
 This was extended to also serve as a way to play text-to-speech remotely.
@@ -168,7 +210,7 @@ Also, that just sounds like a headache.
 
 But, being able to remotely switch lights on and off can be useful.
 I ran across some 433 MHz switched outlets which are a much cheaper
-approach to blinking lights on and off.
+approach for blinking lights on and off.
 
 433 MHz radio is a pretty widely established standard for
 universal garage door openers, cheap security devices like window reed switches, and more.
@@ -198,6 +240,9 @@ I decided against the Sonoff RF Bridge because I didn't want to deal with
 flashing the Tasmota software. Also, I think at the time the devices were
 out of stock.
 
+I already was using a RPi, so just making a board to sit on the GPIO seemed like
+the best solution.
+
 ### 433 MHz on Raspberry Pi
 
 Home Assistant includes built-in integration with [rpi_rf], which
@@ -207,7 +252,7 @@ I found it really simple to configure.
 However, in it's current state, the only issue I found was that
 the Home Assistant integration doesn't (yet)
 support receiving codes.
-[It looks like there's some activity to fix this, which I haven't tried fully yet.](https://community.home-assistant.io/t/rpi-rf-receiver-addon/32947)
+[It looks like there's some way to fix this, which I haven't tried fully yet.](https://community.home-assistant.io/t/rpi-rf-receiver-addon/32947)
 
 To work around this, I've resorted to installing [pilight] and connecting
 it to Home Assistant. This solution really doesn't feel ideal, since
@@ -226,28 +271,48 @@ I have a couple of house plants.
 Unfortunately, I forget to water them.
 (There's a common trend behind these motivations.)
 
-It would too easy just to make a reminder for myself to check them every
-other day. This is why I created a sensor to monitor the conditions
-of the plants. While I was at it, I also wanted to monitor the conditions
-of the environment they are in, including temperature, but also CO2, since
-I'll be staying indoors for a big chunk of 2020.
+![Moe.]({{ site.baseurl }}/images/ha/moe.jpg)
 
 In addition, because my place is somewhat dark, they need some extra light
 from a fancy plant bulb. Using the 433 MHz wall switches from earlier,
 I'm able to turn off this bulb with a timer, controlled by Home Assistant.
 (The bulb produces an annoying high-pitched ringing noise, so I don't leave it on constantly.)
-<!-- need to water my plants, so just use an esp to do it -->
-<!-- also need to add a light because dark plants are sad -->
-<!-- previously for the door monitor, I had to spin up a proxy server which involved a lot of work -->
 
-<!-- todo -->
+It would too easy just to make a reminder for myself to check the plants every
+other day. This is why I created a sensor to monitor the conditions
+of the plants. While I was at it, I also wanted to monitor the conditions
+of the environment they are in, including temperature, but also CO2, since
+I'll be staying indoors for a big chunk of 2020.
 
-<!-- learned about esphome, basically lets you program esp32 with yaml in a way just like HA config -->
-<!-- was super easy and now I have a bunch of sensors monitored with ota updates -->
-<!-- next plan is to make a RF and IR bridge -->
+## ESPHome sensor board
 
-<!-- todo: break down the type of hardware that I host home infra on -->
-<!-- mention that zoneminder on a Pi died when the sd card died -->
+ESPHome is a system for ESP8266/ESP32 that lets you integrate with sensors
+and services by just writing some YAML. It's designed to integrate directly
+into Home Assistant.
+
+Some benefits that this has over something like my door monitor project:
+ - Don't need to set up a proxy server to talk to HA, it handles that directly
+ - Over the air updates
+ - Dead simple to configure
+
+In an afternoon I was able to solder up a board with a bunch of sensors:
+
+![ESPHome sensor board for the plants.][{{ site.baseurl }}/images/ha/plant-sensor1.jpg]
+
+I use soil moisture sensors that stick directly into the plant's soil to read out a relative
+humidity. It outputs an analog signal corresponding to the humidity.
+The value doesn't mean a whole lot unless it's calibrated, which I haven't bothered to do
+carefully yet.
+
+![Sensor sticking directly into the plant pot.][{{ site.baseurl }}/images/ha/plant-sensor2.jpg]
+
+# What's next?
+
+My TODO list for home automation stuff includes:
+ - Setting up a 433 MHz RF bridge using ESPHome which should hopefully be more reliable
+ - Setting up an IR LED bridge using ESPHome, so that I can control IR things in my apartment (even more) remotely
+ - Reverse engineering the IR protocol used by my LG air conditioner, so that I can manage my AC (even more) remotely
+ - Making at least one more plant sensor board, for other parts of the house
 
 [iot-lightbulbs]: todo
 [lfnw]: https://linuxfestnorthwest.org
