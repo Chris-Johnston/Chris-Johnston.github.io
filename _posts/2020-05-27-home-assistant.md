@@ -75,7 +75,7 @@ It's one of the recommended options for Home Assistant.
 At one point, I had a stack of 3 Raspberry Pi's sitting on my desk,
 running various services:
 
-![Picture of 3 Raspberry Pis on my desk][{{ site.baseurl }}/images/ha/rpi-servers.jpg]
+![Picture of 3 Raspberry Pis on my desk]({{ site.baseurl }}/images/ha/rpi-servers.jpg)
 
 This worked okay for a while. It was clear that ZoneMinder could benefit
 from something with a bit more power, luckily I was only using a single camera.
