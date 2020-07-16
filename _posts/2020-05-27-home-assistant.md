@@ -4,7 +4,7 @@ title: Adventures in Home Automation and DIY Security
 date: 2020-05-27
 categories: home-assistant
 description: How I added (possibly too much) automation to my apartment.
-image: /images/ha/rpi-servers.jpg
+image: /images/ha/plant-sensor1.jpg
 ---
 
 This is a summary of my experience setting up my own home automation
