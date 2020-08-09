@@ -212,7 +212,7 @@ It's a similar story, I only had the photos that I wanted printed uploaded to th
 
 One important difference is that Costco does not let you (or does not make it easy) to re-download the photos as they are uploaded in the original quality.
 
-You can download the thumbnails, but they are slightly compressed. [I wrote a TaperMonkey script to do this.](https://github.com/Chris-Johnston/CostcoPhotoCenterScraper)
+You can download the thumbnails, but they are slightly compressed. [I wrote a TamperMonkey script to do this.](https://github.com/Chris-Johnston/CostcoPhotoCenterScraper)
 
 The alternative that Costco offers is a Photo USB, which is just a flash drive with your files. I found that these files
 seemed like they were of the original quality, but they still aren't the Camera RAWs that I really wanted. I paid $10 for the flash drive anyways.
