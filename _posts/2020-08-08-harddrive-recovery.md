@@ -46,7 +46,7 @@ A few weeks later, I was planning to set up a Plex server to run off of the NAS.
     ChrisJ: and now it wants to wipe my hard drive before I can use it
     ChrisJ: luckily there's two that are mirrored
 
-At first, I just thought that because of that IP addessing issue (I had changed my subnet range), that I would have to pull the drives out, let the NAS reest, and reload all of my data. A pain, but no big deal.
+At first, I just thought that because of that IP addessing issue (I had changed my subnet range), that I would have to pull the drives out, let the NAS reset, and reload all of my data. A pain, but no big deal.
 
     April 29 2019 11:00 AM
     ChrisJ: well ****
