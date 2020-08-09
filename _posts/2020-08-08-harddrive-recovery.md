@@ -356,6 +356,10 @@ _actually_ retrieve this data without relying on something else?
 
 # Wrapping up
 
+I have my pictures back! Here's a picture of a muddy dog:
+
+![Picture of a muddy dog.](/images/harddrive/recovered_doggo.png)
+
 This experience sucked. I'm happy to get my data back, but having my photos stuck in limbo for a year and a half was miserable.
 
 I rate "nuking your hard drives" a 0/10.
