@@ -28,7 +28,7 @@ Surely no technical person could make such a big mistake? (I'm literally on the 
 When I was moving, I had to clear all of the stuff from my desk area.
 This included the computer, monitors, all of the accessories and their power bricks. To drive my fancy headphones, I have an
 amplifier, and to store my files, I have a NAS (Network Attached Storage). I was using a QNAP 2-bay unit which was configured
-in a RAID 0.
+in a RAID 1 mirror.
 
 I was very careful when moving. Anything with a spinning HDD was fully powered off, and I was very careful to move it
 first before most other things. I distinctly remember buckling up both my desktop computer and the NAS in the car seats.
