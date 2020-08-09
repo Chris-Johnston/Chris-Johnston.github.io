@@ -357,9 +357,9 @@ _actually_ retrieve this data without relying on something else?
 
 # Wrapping up
 
-I have my pictures back! Here's a picture of a muddy dog:
+I have my pictures back! Here's a picture of a muddy dog that was stuck on those drives:
 
-![Picture of a muddy dog.](/images/harddrive/recovered_doggo.png)
+![Picture of a muddy dog.](/images/harddrive/recovered_doggo.jpg)
 
 This experience sucked. I'm happy to get my data back, but having my photos stuck in limbo for a year and a half was miserable.
 
