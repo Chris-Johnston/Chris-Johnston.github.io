@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How I saved a bunch of money fixing my dead hard drives
+title: A year long journey to fix some hard drives
 description: I fried my NAS hard drives, here's how I recovered my data without spending hundreds of dollars.
 date: 2020-08-08
 image: /images/harddrive/crispy_diode.jpg
