@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A year long journey to fix a hard drive
-description: I fried my NAS hard drives, here's how I recovered my data without spending hundreds of dollars.
+description: I fried my NAS hard drives, here's how I was able to recover my data.
 date: 2020-08-08
 image: /images/harddrive/crispy_diode.jpg
 ---
