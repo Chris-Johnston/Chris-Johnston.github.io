@@ -261,6 +261,8 @@ When I plugged in the franken-drive\*, it didn't spin. Because my drives were in
 
 On this second drive, I again screwed up the desoldering process, and burnt off a pad on the donor PCB. (This turned out to be a good thing.) There goes another $50.
 
+![Picture of the ripped up pad.](/images/harddrive/ripped_up_pad.jpg)
+
 Luckily, I could repeat this process with another PCB, since I hadn't touched the dead PCB.
 
 ## One last thing...
@@ -278,6 +280,10 @@ When I checked both (one for 5v and one for 12v), one read nearly 0 ohms and the
 ### Please work, please work, please work, please work...
 
 Because this resistor was open, the 12V circuit wasn't getting any power. I bridged a blob of solder over this component. (Effectively the same as putting a nail in a fusebox.)
+
+![Big blob of solder.](/images/harddrive/solder_blob.jpg)
+
+In this image, the blue component with the letter "T" is the 0 ohm resistor for the 5V line. The blob of solder is bridging the 12V one.
 
 Once I powered on the drive... it started to spin! SUCCESS!
 
