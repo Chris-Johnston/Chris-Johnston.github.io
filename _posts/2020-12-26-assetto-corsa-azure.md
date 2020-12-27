@@ -7,7 +7,7 @@ date: 2020-12-26
 
 **DRAFT: This page is incomplete and has a few more things to fix.**
 
-_Assetto Corsa_ is a racing simulation game which supports online multiplayer play.
+[_Assetto Corsa_](https://store.steampowered.com/app/244210/Assetto_Corsa/) is a racing simulation game which supports online multiplayer play.
 All of the lobbies are community-run. I wanted to set up a
 private server to play among some friends, and so here's how I did it.
 
