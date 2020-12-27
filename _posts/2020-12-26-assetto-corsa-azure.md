@@ -5,50 +5,73 @@ description: Here's how I set up an Assetto Corsa server running on an Azure VM.
 date: 2020-12-26
 ---
 
-# (draft)
-High level steps:
-1. make a linux vm in azure
-2. setup steamcmd
-3. download assetto corsa dedicated server
+**DRAFT: This page is incomplete and has a few more things to fix.**
 
-# Create an Azure VM
+_Assetto Corsa_ is a racing simulation game which supports online multiplayer play.
+All of the lobbies are community-run. I wanted to set up a
+private server to play among some friends, and so here's how I did it.
+
+You can definitely host this server on the same machine you play on!
+I chose not to do that so that everyone gets a fast connection to the server,
+independent of my internet speed, and so that I can keep the server on
+when I shut my machine off.
+
+There are also places that will happily host servers for you, at a price.
+But, I have some free credits for server hosting, and so the low low cost of free
+is preferred.
+
+**TL;DR:**
+1. Create an Ubuntu VM in Azure
+2. Setup SteamCMD, download Assetto Corsa Dedicated Server
+3. Allow specific ports through firewall
+4. Configure server and go
+
+# 1. Create an Ubuntu VM in Azure
+
+Of course, any cloud VM would do just fine here. Here are the steps
+I followed to set this up in Azure.
 
 ![Create the Azure VM.](/images/acds/create_azure_vm.png)
 
-I'm using latest Ubuntu server LTS because that's my preference.
+While Assetto Corsa on PC is Windows-only, the server works on Linux too.
+I created a new Azure VM running the latest Ubuntu LTS release, since it's what
+I like to use.
 
-Going with the B1ms spec server with 2 gb of ram. Will report how well that does.
+I used the `B1ms` spec server with 2GB of memory. After testing this for a few hours
+with a group of 4, this SKU handled great. **TODO: Investigate if I can scale down to save some spending.** (This could be overkill, I'm seeing it peaked around 14% CPU? Forums suggest network is the bandwidth, I wonder how much memory matters as well.)
 
-I recommend using a SSH key based authentication.
+I recommend using SSH-based authentication, instead of password-based.
 
-For now, leave the inbound port rules using the defaults, so let 22 (SSH) enabled. We'll enable more later.
+The default inbound port rules are fine to start. I left port 22 (SSH) enabled so that I can log in. The necessary ports for the server can be enabled once we get them from the config.
 
 ![Configure the auto-shutdown settings.](/images/acds/mgmt_auto_shutdown.png)
 
 Note that by default, auto-shutdown is enabled.
 In my case, I know that I won't always be running this server 24/7, and so this is actually a decent way to save on hosting costs for when I forget to shutdown the VM.
-If you want a more available server, I would recommend shutting this off.
+If you want a more available server, I would recommend disabling this setting.
 
-# Setup SteamCmd
+# 2. Setup SteamCmd, download Assetto Corsa Dedicated Server
 
-Log into the server using the public IP address.
+SSH into the server using the public IP address.
 
-The valve developer wiki provides some great instructions for installing SteamCMD, which I would also recommend.
+[The Valve Developer Wiki provides some some great instructions for installing SteamCMD, as well as documentation in general.](https://developer.valvesoftware.com/wiki/SteamCMD)
 
-https://developer.valvesoftware.com/wiki/SteamCMD
-
-Some notes:
-I had to run `sudo dpkg --add-architecture i386` before I could run `sudo apt install steamcmd`.
-
-Note that we very well could be running this in docker if we wanted to, but in this case I didn't feel that there was a need. It also seemed that these images were community-maintained instead of from Valve themselves.
-
-https://steamcommunity.com/app/244210/discussions/0/2828702373004724010/
-
-I used this guide once steamcmd was installed.
-
-After it's installed:
+Note that this first line was necessary, since I was running a 64-bit VM.
+```bash
+$ sudo dpkg --add-architecture i386
+$ sudo apt update
+$ sudo apt install steamcmd
 ```
-$ steamcmd
+
+The wiki also mentions that this can run in Docker. In this case I didn't feel it
+was necessary. These images are also community-maintained instead of from Valve
+themselves. It's just more straightforward to run it on the VM normally.
+
+[This guide on the steam community for Assetto Corsa was helpful.](https://steamcommunity.com/app/244210/discussions/0/2828702373004724010/)
+Once SteamCmd was installed, I ran the following commands.
+
+```
+$ steamcmd +@sSteamCmdForcePlatformType windows
 ...
 <bunch of logs go here>
 ...
@@ -56,68 +79,54 @@ Steam Console Client (c) Valve Corporation
 -- type 'quit' to exit --
 Loading Steam API...OK.
 
-Steam>
-```
-
-Login:
-```
 Steam> login <username>
-```
-cwd is /home/steam
-```
+...
+<password prompt goes here>
+...
 Steam> force_install_dir ./assetto/
-```
-
-Install ACDS:
-```
 Steam> app_update 302550 validate
 ```
 
-This did not work "ERROR! Failed to install app '302550' (Invalid platform)"
+`302550` is the AppId of the Assetto Corsa Dedicated Server.
 
- instead ran: steamcmd +@sSteamCmdForcePlatformType windows
+I ran into this issue when I failed to include the `+@sSteamCmdForcePlatformType windows` arg. This happened even though this was on a Linux VM.
 
- ```
-Steam> login <username>
-Steam> app_update 203550 validate
+> ERROR! Failed to install app '302550' (Invalid platform)
 
- ```
+To fix this, I made sure to include this parameter when starting the SteamCMD CLI.
 
- Despite "force platform type", works just great on linux!
+Once this was finished, the game files were available under the directory `~/.steam/steamcmd/assetto/`
 
- # Setup AC
+The `acServer` executable in this directory is the game server.
 
- Try running the server once
- cd ~/.steam/steamcmd/assetto/
- ./acServer
+# 3. Allow specific ports through firewall
 
- Should probably break, but that means it worked!
-
- Configure your server using
- nano cfg/entry_list.ini # the AI cars
-
- notable settings:
- ```
-UDP_PORT=9600
-TCP_PORT=9600
-HTTP_PORT=8081
- ```
-
-# Allow our game ports 
-
-Allow the ports that we need
+Assetto Corsa Dedicated Server by default uses the ports 9600 and 8081 with
+both TCP and UDP. These are specified in the `cfg/entry_list.ini` server config file.
 
 ![allow ports in azure](/images/acds/add_port_settings.png)
 
-# Send it!
+This was added from the `Settings > Networking` tab in Azure.
 
-Run the server and it should be able to phone home.
+# 4. Configure server and go
+
+Once ports have been allowed, the ACDS should be able to "phone home".
+The following output is what the logs should look like on success:
 
 ![working server](/images/acds/working_server.png)
 
+The "phone home" step allows for the central Assetto Corsa server to know about your server
+and so players can now search for your server using the in-game server browser window.
+
 ![server list](/images/acds/server_in_serverlist.png)
 
+And if everything's configured correctly, players should now be able to connect without any trouble.
+
 ![connected to server](/images/acds/connected_to_server.png)
+
+## TODO:
+
+incomplete
 
 # Automatically starting the server on server boot
 
@@ -130,5 +139,4 @@ While you can edit the ini files directly, it's much easier to just use the GUI 
 
 I found that I had to install the DS, copy the game files to be under the Steam Assetto Corsa install directory,
 and then I could copy the config onto my main machine, specify settings,
-and then update the server.
-
+and then update the server with SCP.
