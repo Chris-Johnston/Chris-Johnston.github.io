@@ -38,7 +38,7 @@ I created a new Azure VM running the latest Ubuntu LTS release, since it's what
 I like to use.
 
 I used the `B1ms` spec server with 2GB of memory. After testing this for a few hours
-with a group of 4, this SKU handled great. **TODO: Investigate if I can scale down to save some spending.** (This could be overkill, I'm seeing it peaked around 14% CPU? Forums suggest network is the bandwidth, I wonder how much memory matters as well.)
+with a group of 4, this SKU handled great. **TODO: Investigate if I can scale down to save some spending.** (This could be overkill, I'm seeing it peaked around 14% CPU? Forums suggest network is the bottleneck, I wonder how much memory matters as well.)
 
 I recommend using SSH-based authentication, instead of password-based.
 
