@@ -3,7 +3,6 @@ layout: post
 title: Hosting an Assetto Corsa multiplayer server on Azure
 description: Here's how I set up an Assetto Corsa server running on an Azure VM.
 date: 2020-12-26
-permalink: /assetto-corsa-azure/
 ---
 
 **DRAFT: This page is incomplete and has a few more things to fix.**
