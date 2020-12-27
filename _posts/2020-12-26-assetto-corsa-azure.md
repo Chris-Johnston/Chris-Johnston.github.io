@@ -8,7 +8,7 @@ permalink: /assetto-corsa-azure/
 
 **DRAFT: This page is incomplete and has a few more things to fix.**
 
-<todo add image of multiplayer shenanigans here>
+todo add image of multiplayer shenanigans here
 
 [_Assetto Corsa_](https://store.steampowered.com/app/244210/Assetto_Corsa/) is a racing simulation game which supports online multiplayer play.
 All of the lobbies are community-run. I wanted to set up a
