@@ -7,6 +7,8 @@ date: 2020-12-26
 
 **DRAFT: This page is incomplete and has a few more things to fix.**
 
+<todo add image of multiplayer shenanigans here>
+
 [_Assetto Corsa_](https://store.steampowered.com/app/244210/Assetto_Corsa/) is a racing simulation game which supports online multiplayer play.
 All of the lobbies are community-run. I wanted to set up a
 private server to play among some friends, and so here's how I did it.
@@ -132,6 +134,8 @@ incomplete
 
 It's great that we can manually start the server when we need it, but
 in case our VM restarts, how do we start the process automatically?
+
+<todo include systemctl>
 
 # Configuring the game server
 
