@@ -39,6 +39,8 @@ While Assetto Corsa on PC is Windows-only, the server works on Linux too.
 I created a new Azure VM running the latest Ubuntu LTS release, since it's what
 I like to use.
 
+TODO: check if I can scale down
+
 I used the `B1ms` spec server with 2GB of memory. After testing this for a few hours
 with a group of 4, this SKU handled great. **TODO: Investigate if I can scale down to save some spending.** (This could be overkill, I'm seeing it peaked around 14% CPU? Forums suggest network is the bottleneck, I wonder how much memory matters as well.)
 
@@ -126,21 +128,48 @@ And if everything's configured correctly, players should now be able to connect 
 
 ![connected to server](/images/acds/connected_to_server.png)
 
-## TODO:
-
-incomplete
-
 # Automatically starting the server on server boot
 
-It's great that we can manually start the server when we need it, but
-in case our VM restarts, how do we start the process automatically?
+Now that the server is setup, the VM needs to be configured to start the server on boot. This way I don't have to log back
+in each time for whatever reason.
 
-<todo include systemctl>
+I created the file with the contents: `/etc/systemd/system/acds.service`
+
+```
+[Unit]
+Description=Assetto Corsa Dedicated Server
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=steam
+ExecStart=/home/<user>/.steam/steamcmd/assetto/acServer
+WorkingDirectory=/home/<user>/.steam/steamcmd/assetto
+
+[Install]
+WantedBy=multi-user.target
+```
+
+The `steam` user was recommended by both of the guides linked earlier. This way the server runs with minimal
+privileges.
+
+Afterwards, I ran these commands:
+```console
+$ sudo systemctl daemon-reload 
+$ sudo systemctl start acds
+```
+
+Then I ran `journalctl -fu acds` to check the logs for the server to ensure it's up as expected.
+
+The command `sudo systemctl restart acds` will restart the server.
 
 # Configuring the game server
 
 While you can edit the ini files directly, it's much easier to just use the GUI to do it.
 
-I found that I had to install the DS, copy the game files to be under the Steam Assetto Corsa install directory,
-and then I could copy the config onto my main machine, specify settings,
-and then update the server with SCP.
+I found that I had to install the server software in Steam, copy the game files to be under the Assetto Corsa game install directory,
+and then I could copy the config onto my main machine, specify settings, and then update the server config with SCP.
+
+While it's not the most turn-key solution, it's easier than editing the `.ini` files by hand.
