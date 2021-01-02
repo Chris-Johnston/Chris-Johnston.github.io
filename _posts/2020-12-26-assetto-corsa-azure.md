@@ -5,10 +5,6 @@ description: Here's how I set up an Assetto Corsa server running on an Azure VM.
 date: 2020-12-26
 ---
 
-**DRAFT: This page is incomplete and has a few more things to fix.**
-
-todo add image of multiplayer shenanigans here
-
 [_Assetto Corsa_](https://store.steampowered.com/app/244210/Assetto_Corsa/) is a racing simulation game which supports online multiplayer play.
 All of the lobbies are community-run. I wanted to set up a
 private server to play among some friends, and so here's how I did it.
@@ -39,10 +35,8 @@ While Assetto Corsa on PC is Windows-only, the server works on Linux too.
 I created a new Azure VM running the latest Ubuntu LTS release, since it's what
 I like to use.
 
-TODO: check if I can scale down
-
-I used the `B1ms` spec server with 2GB of memory. After testing this for a few hours
-with a group of 4, this SKU handled great. **TODO: Investigate if I can scale down to save some spending.** (This could be overkill, I'm seeing it peaked around 14% CPU? Forums suggest network is the bottleneck, I wonder how much memory matters as well.)
+At first I used the `B1ms` spec server with 2GB of memory. After testing this for a few days, I realized
+this was way more than I needed. **I was able to scale down to the `B1ls` spec server and it handled just fine with 4 people.**
 
 I recommend using SSH-based authentication, instead of password-based.
 
