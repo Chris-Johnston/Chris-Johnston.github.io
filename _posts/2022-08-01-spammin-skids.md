@@ -581,7 +581,7 @@ I am late to this party
 
 So I got busy and never finished this. I've let this run for a while, let's see how it's going:
 
-![](screenshot%20of%20app%20insights%20showing%20success%20code%20of%20response.png)
+![](/images/discord-skids/screenshot%20of%20app%20insights%20showing%20success%20code%20of%20response.png)
 
 I let this run for 4 months, it kinda kept working. I didn't put any attention into monitoring uptime, I've
 been too busy with other things.
