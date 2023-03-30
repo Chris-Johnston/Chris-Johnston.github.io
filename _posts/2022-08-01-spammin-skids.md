@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spamming some Discord Skids
-description: I spammed some Discord Script Kiddies that tried to scam me.
+description: I spammed some losers that tried to scam me.
 date: 2022-08-01
 ---
 
@@ -66,6 +66,8 @@ I used a bait account which was not my verified bot dev account, and quickly del
 they were not happy that I baited them, since they could tell which user I had used
 
 haha
+
+(when going back to write this afterwards, the original owner of this account (it had been taken over) came back and renamed it to something else, this is why the username is different. same person.)
 
 ![](/images/discord-skids/2022-08-12-23-16-32.png)
 
