@@ -46,7 +46,7 @@ someone messaged me out of the blue asking if I wanted to play their game, i lov
 this is because I have the discord "early verified bot dev" badge, which makes me a
 target for future phishing attempts
 
-TODO censor this url if I ever make this more public
+TODO censor this url if I ever make this more public (**edit the url is down lol get rekt**)
 ![](/images/discord-skids/2022-08-12-23-12-19.png)
 
 ~~unlike before this website just hosts a rar file which is hosted on discord CDN~~
