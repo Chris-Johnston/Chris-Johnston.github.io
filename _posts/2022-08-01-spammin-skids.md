@@ -545,7 +545,7 @@ https://github.com/Stanley-GF/PirateStealer
 
 oh so this is the source
 
-https://get-findthehidden.ml/
+https://get-findthehidden.ml/ **this is down broken**
 
 another one
 
@@ -561,7 +561,7 @@ modified date is really recent
 
 ![](/images/discord-skids/2022-09-06-22-00-26.png)
 
-this seems to be using the premium malware
+this seems to be using the 'premium' malware
 
 ![](/images/discord-skids/2022-09-06-22-08-23.png)
 
@@ -616,3 +616,11 @@ this other c2 which seems to have been hosted on the same server is also down (d
 so seems like I can shut this project off now
 
 holy fucking bingle
+
+## what else
+
+I really should look into what else the exe is doing. It does a lot beyond just the discord client
+modifications, much more powerful, and much more concerning.
+
+unfortunately I am unskilled and too busy to learn atm
+
