@@ -1,159 +1,167 @@
 ---
 layout: post
-title: Spamming some Discord Skids
-description: I spammed some losers that tried to scam me.
+title: Spamming some Discord Scammers
+description: Someone tried to scam me, so I sent them fake login data.
 date: 2022-08-01
 ---
 
-Hey, so these are some notes I took about reverse engineering some malware that's been sent to me via
-discord, and what I've been doing about it
+# TL;DR
 
-**These are hardly edited**, but contain useful details which I hope will aid in being able to stop them
-Thankfully antivirus is able to flag these files, but I'd love to see this coordinated effort taken down
+Some scammers on discord, in multiple attempts, tried to send me malware in Discord to take over my account and do other nefarious things. I reverse engineered their malware, and used it to generate to send them fake login credentials to waste their time and effort.
 
-I'm planning on sharing this with cloudflare as well to see if we can stop them from hosting this CDN. **edit: neither cloudflare or discord responded to me lol**
+Eventually their C2 server shut down.
 
 # Attack of the dutch furries
 
-Someone tried to hack me on discord and so I hacked them right back. here is a brief retelling of what happened
+These are 'stream of consciousness' notes that I took at the time. They are very messy,
+because I was more focused on recording details than making it look nice (otherwise, I would have spent forever editing this, and never would have pushed it).
+
+A few times, I have been sent unsolicited DMs on Discord. Most of the time they just say "hi" and don't ask for anything. If I have free time, I might reply to them and see what ~~they want~~ scam they are trying to run. I'm a big fan of Scam baiters, and so if I can waste Scammer's time, it means that they aren't actively going after someone else.
+
+Every now and then, they send a "game" that they've been "working on", and ask me to try it out. These sometimes are just the `.exe`, sometimes a `.rar` (sometimes password protected), sometimes are a link to some website which hosts it (in one case, their website used the Discord CDN to host it).
 
 ## Why
 
-I have this badge on my account which apparently is valuable for scammers. I assume they want
-it so that they can phish people
+I have this flag on my account which apparently is valuable for scammers. I assume they want
+it so that they can phish people:
 
 ![](/images/discord-skids/2022-08-14-15-08-13.png)
 
-in the past i have been offered money for my account because of this badge, and later on
-I'll find that these badges are a clear target for the scammers
+In the past I have been offered money for my account because of this badge, and later on
+I'll find that these badges are a clear target for the scammers:
 
 ![](/images/discord-skids/2022-08-14-16-17-28.png)
 
-user id 866762355232210984
+This user is now deleted, and it was probably just taken over from another account. The user id is 866762355232210984 .
 
-## previous experience
+## Previous Experience
+
+I've had this happen before, the last time I tried to be obnoxious and ask if their game worked on my iPad (I don't have an iPad).
 
 ![](/images/discord-skids/2022-08-14-15-09-56.png)
 
-i've got someone try to scam me before, I only ran strings on it and didn't figure out how it
-worked at the time
+At the time I just ran `strings` on the binary to look for things. I didn't find much, because the application was packaged using nexe, and so it contained a bunch of unrelated javascript stuff that wasn't part of the payload, just required for it to run. Eventually I got busy with something else, and gave up.
 
+I also tried spinning up a windows 8 VM, and recall it kept throwing some exception at the time, so their malware didn't even work.
 
 ## The bait
 
-someone messaged me out of the blue asking if I wanted to play their game, i love games!
+Eventually, someone else messaged me out of the blue asking if I wanted to play their game, I love games!
 
-this is because I have the discord "early verified bot dev" badge, which makes me a
-target for future phishing attempts
+I was going to censor this URL when I made this public, but the URL is down, so I don't care anymore. They started by asking if I wanted to play their game, which even had a fake website spun up. I believe they steal the name and these screenshots from Indie devs, to make things look legit.
 
-TODO censor this url if I ever make this more public (**edit the url is down lol get rekt**)
 ![](/images/discord-skids/2022-08-12-23-12-19.png)
 
-~~unlike before this website just hosts a rar file which is hosted on discord CDN~~
+Despite the scammers now knowing how to set up and host a website, they for some reason are still hosting their binary on the Discord CDN. I bet this is just easier for them to coordinate.Eventually, they just migrated the `.rar` file to their own web server, and not the Discord CDN.
 
-edit; in the time since, they have actually migrated the rar file to be hosted
-on their own web server, good for them
+After a bit of being annoying and slow to respond, the scammers told me to log on to a PC to play their game. They also insisted that I log in via my own account, and not via a different account.
+
+The malware doesn't do anything visually when it runs. A console window appears, quickly close, and eventually the Discord process crashes. This is because the malware overwrites the Discord `app.asar` file, which contains resources used by the client. They want you to restart the app so that the payload is loaded, and so that the modified client can send your token to their C2 server.
+
+I took this as an opportunity to be annoying:
 
 ![](/images/discord-skids/2022-08-12-23-14-10.png)
 
-of course I have to be as annoying as possible. these are scum of the earth, this is
-a free therapy session to vent my frustrations of the world
+Eventually they clearly stated that they were interested in _my_ account, and not the throwaway account that I created. (Discord's current user verification makes it really hard to create a throwaway account, unless you have an extra phone number. This took some time to get sorted out.)
 
 ![](/images/discord-skids/2022-08-12-23-14-54.png)
 
-I used a bait account which was not my verified bot dev account, and quickly deleted it after
+I used a bait account which was not my verified bot dev account, and quickly deleted it after.
 
-they were not happy that I baited them, since they could tell which user I had used
-
-haha
+Also, since they distributed their malware via `.rar`, they insisted that I download winRAR. My VM didn't have that installed, and so that was another opportunity to be difficult.
 
 (when going back to write this afterwards, the original owner of this account (it had been taken over) came back and renamed it to something else, this is why the username is different. same person.)
 
 ![](/images/discord-skids/2022-08-12-23-16-32.png)
 
-also why do they insist I download winrar
+Eventually they either lost access to this account, gave up, or both.
 
 ![](/images/discord-skids/2022-08-12-23-17-13.png)
 
-anyways they gave up. whatever, I have what I need
+I have what I need, so that wasn't a problem.
 
 ## hacking_sounds.wav
 
-cool so now i have the payload, what does it do?
+Cool so now I have the payload, what does it do?
 
-thankfully I can just spin up azure VMs and go wild, unfortunately unlike
+Thankfully I can just spin up azure VMs and go wild, unfortunately unlike
 a previous attempt I can no longer seem to spin up windows 8 VMs, which
-absolutely seemed to break the node.js runtime thingy they are using
+absolutely seemed to break the node.js runtime thingy they are using. (One concern that I had, if I spin up an Azure VM, are there any bits, like managed identity, which might put my account at risk or identify my subscription? The VM has long-since been nuked.)
 
-admittedly there's some interesting stuff going on in the application that I have glossed over and will need to visit
+There are some things going on in the payload which I haven't figured out.
 
-The first thing I noticed is that the script will open in a command window, then disappear, and some stuff happens
+When I run the program, I notice it opens a command window, this window disappears, and then some stuff happens, like the Discord client exits. The program seems to be a node JS app packaged using nexe, so if I dump strings, I get a ton of unrelated javascript things which aren't related. This makes it hard to figure out what the program is doing directly, but it is easy to use other tools to identify later stages of the payload (like what files it overwrites in the Discord client itself, and what that does).
+
+By running the program, I noticed it created a `temp.ps1` file in the working directory, ran it, and then deleted it.
 
 ![](/images/discord-skids/2022-08-12-23-19-09.png)
 
-it writes this file , runs it, and then deletes it.
+If I copy the .exe to a directory which doesn't have permissions to delete the file, then it cannot delete it, and so I can keep the file and look at it.
 
-but, if I copy the .exe to a directory which doesn't have permissions to run the file, then it cannot delete it, and so I can keep the file and look at it
-
-unfortunately not very interesting, it just hides the conhost window
+Unfortunately this step is  not very interesting, it just hides the conhost window.
 
 ![](/images/discord-skids/2022-08-12-23-20-16.png)
 
-procmon is pretty cool shit, I was able to log what the process was doing. in addition to writing this powershell script to hide the window I also saw it writing out libraries, accessing directories to check for browser cookies (need to dive further into this), but also saw it going into the discord app data directory
+Procmon is pretty cool shit, I was able to log what the process was doing. In addition to writing this powershell script to hide the window I also saw it writing out libraries, accessing directories to check for browser cookies (need to dive further into this), but also saw it going into the discord app data directory. The library and cookies make me think that this is an artifact from nexe, and not the payload of the app itself. Though I can't be too sure.
 
-seems like discord was the primary target, as that's the way that the scammers can hop accounts, but while they are at it they are stealing browser cookies and whatever else they can find. still haven't ruled out exactly what else they are doing here, or how they are doing it, again this is a gap in my coverage of this so far
+It seems like discord was the primary target, as that's the way that the scammers can hop accounts, but while they are at it they could be stealing browser cookies and whatever else they can find. Still haven't ruled out exactly what else they are doing here, or how they are doing it, again this is a gap in my coverage of this so far.
+
+Still an open question, need to determine if there is a good way to dump the actual program that was bundled by nexe. I should take some time to figure this out, can't just load it in ghidra or strings because there's a lot else going on.
+
+Another TODO: Need to figure out what these `.bby` files that are being written to. Why is the malware writing these files? What are `bby` files (this malware is often referred to as bby stealer, why?)
 
 ## javascript acquiredscript
 
+At least it was easy to get the modified index.js because procmon showed me where it was written to. Unfortunately, it's minified and obfuscated.
+
 ![](/images/discord-skids/2022-08-12-23-23-04.png)
 
-cool so now that I know what it does, I can see that it wrote out to the file 
-discord/app/index.js
-
-unsure if it is overwriting or just adding a new file but also modifying the discord app to load it on start up
+Unsure if it is overwriting or just adding a new file but also modifying the discord app to load it on start up.
 
 ![](/images/discord-skids/2022-08-12-23-24-27.png)
 
-again, procmon to the rescue, mon
-
 ### hey I see wireshark, what were you doing 
 
-so there is an environment var in windows that can log TLS handshake keys so that
-wireshark can decrypt tls. unfortunately electron apps like discord do not care about this, and this exploit only targets the discord electron app from what i can tell
+So there is an environment var in windows that can log TLS handshake keys so that
+wireshark can decrypt TLS. Unfortunately electron apps like discord do not care about this, and this exploit only targets the discord electron app from what i can tell.
 
-however, I was able to see the DNS requests the app was making, and confirm that
-it was sending encrypted traffic. There was another method that I used to capture traffic which I will explain in a bit
+However, I was able to see the DNS requests the app was making, and confirm that
+it was sending HTTPS traffic. There was another method that I used to capture traffic which I will explain in a bit.
 
 ----
 
-anyways, this javascript is a hot piece of mess
+### Anyways, this javascript is a hot piece of mess.
 
-basically it's got a big list of strings which have method names, text fields, segments of urls, etc. and each time it accesses those it calls into a method which basically gets it out of that list
+Basically it's a big list of strings which have method names, text fields, segments of urls, etc. and each time it accesses those it calls into a method which basically gets it out of that list.
+
+The master list looks like this:
 
 ![](/images/discord-skids/2022-08-12-23-27-44.png)
 
-the list of keywords and such
+And the code looks like this, it appends entries together when they are accessed.
 
 ![](/images/discord-skids/2022-08-12-23-27-23.png)
 
-so a lot of the code looks like this
+I was able to start renaming methods, I figured out that this lookup method has a
+constant offset (444) from the index that was given to it.
 
 ![](/images/discord-skids/2022-08-12-23-29-37.png)
 
-basically all it does is takes the index provided, and returns `index - 444`. that's it
+Basically all it does is takes the index provided, and returns `index - 444`. That's it.
 
-but when i did this the first time, it was really broken:
+But when i did this the first time, it was really broken.
 
-TODO - i do not have an example of this
+TODO: I don't have an example screenshot of this.
 
-basically, there is another trick that they are doing: the list of keywords is not in the correct order at rest, and needs to be modified before it is accessed
+Basically, there is another trick that they are doing: the list of keywords is not in the correct order at rest, and needs to be modified before it is accessed. Before anything is accessed, the code will de-scramble the master list. To do this, in a loop it tries to check a number of values against a constant, and if it doesn't match, rotate the list left and try again.
+Once the expected value found, the master list is correctly set.
 
-thankfully, it's just a simple cipher, and doesn't modify as it is accessed (thank fuck)
+Thankfully, it's just a simple cipher, and doesn't modify as it is accessed (thank fuck).
 
 ![](/images/discord-skids/2022-08-12-23-32-20.png)
 
 This method uses json parseint to fetch 13 values, if they are all valid ints (see rant) and if the computed check value matches the key, stop, because the values are fine.
-Otherwise, rotate the contents by one and try again
+Otherwise, rotate the contents by one and try again.
 
 ### rant
 
@@ -165,8 +173,9 @@ parseInt('4075e8=_0x') == 4075
 
 fuck javascript
 
-
-anyways here's the gist of the check function (the lookup function is not very interesting)
+Anyways, I wrote some python to rotate the list of strings, using the check logic from the
+payload, to compare against the constant. Once I had the de-scrambled list of strings,
+I wrote a simple substitution to replace the calls to the lookup function with the literal strings from the descrambled list.
 
 ```python
 def try_solve():
@@ -226,7 +235,7 @@ check out these urls, they are interested in user billing info, friends, 2fa, et
 
 they take this data, and build a json object and send it to their server (and the fields are scary, they have plaintext passwords and tokens, and can monitor when they change)
 
-**takeaway: change your password OUTSIDE of the app using emailed code**
+**takeaway: change your password OUTSIDE of the app using emailed code** (unsure if the browser is also safe, not sure what those `.bby` files it writes are)
 
 ![](/images/discord-skids/2022-08-12-23-40-33.png)
 
@@ -599,7 +608,7 @@ I know the format that they use on the c2, wonder if they have moved on to a new
 
 got busy.
 
-seems that around 2/15 2023 this broke, did the move to a new website?
+seems that around 2/15 2023 this broke, did they move to a new website?
 
 ![](/images/discord-skids/2023-03-29-22-46-34.png)
 
@@ -623,4 +632,16 @@ I really should look into what else the exe is doing. It does a lot beyond just 
 modifications, much more powerful, and much more concerning.
 
 unfortunately I am unskilled and too busy to learn atm
+
+## some other notes
+
+was looking up what the `.bby` file is and found another sample here (from 12/16/2022)
+
+https://www.joesandbox.com/analysis/768472/0/html
+
+and seems that the file here seems to be the JS payload:
+
+![](2023-04-09-18-25-04.png)
+
+So that could be a useful lead for figuring out the `.exe` payload, since that was doing a lot more than just writing the Discord payload.
 
