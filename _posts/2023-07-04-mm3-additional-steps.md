@@ -1,9 +1,11 @@
 ---
 title: Additional steps for creating a MM3 modchip
-description: Here are the steps I followed for setting up a MM3 modchip
+description: and how I broke my PS1
 layout: post
 date: 2023-07-04
 ---
+
+**This page documents some additional steps I used to program a MM3 modchip, which I then proceeded to try and install in my PS1, only for me to break it.**
 
 # Additional steps for creating a MM3 modchip
 
@@ -77,6 +79,46 @@ When I used MPLAB to create a "prebuilt" project, the PICkit 3 was not listed as
 
 So this didn't seem to work, because the PICkit 3 was not compatible.
 
-Instead I found this page https://microchipdeveloper.com/pickit3:scripttool which had a link to the archive for the PICKit 3 software. My browser complained about this because it was downloading over plain HTTP.
+### The steps that did work
 
-<!-- TODO, restarting to see if this resolves drivers -->
+I think.
+
+I found this page https://microchipdeveloper.com/pickit3:scripttool which had a link to the archive for the PICKit 3 software. My browser complained about this because it was downloading over plain HTTP.
+
+1. Download Pickit 3
+2. Restart computer
+3. Pickit 3 will recognize it, but it's in "MPLAB mode". The download came with some other firmware, and so I am guessing I have to use that to reconfigure the pickit.
+
+    ![screenshot of updating pickit 3](../images/etc/pickit_mplab.png)
+
+    Once I updated the firmware for the pickit 3, it then showed as connected.
+
+4. Plug in the header to the pickit.
+5. Run a "blank check" to ensure the pickit can actually reach the PIC.
+
+    ![it works](../images/etc/pickit_blank_check.png)
+
+6. File -> Import Hex for the MM3 file.
+7. Click the write button. I'm ignored the Vdd warning about bulk erase operations.
+
+Then I got a programming failed error.
+
+8. Actually this Vdd bulk erase operation was important. I set this to 5 and "on", when the default was off and 2.5V.
+
+![had to set the vdd to 5v](../images/etc/pickit_vdd.png)
+
+this chip is not connected to anything and so it's fine that we do this
+
+9. then could verify, and this said verification successful.
+
+Cool, this PIC is now an mm3. time to install it
+
+## 3. Attempt to install the MM3 chip
+
+I have a [PU-23 board, and so I used this guide for it](https://quade.co/ps1-modchip-guide/mm3/pu-23/)
+
+Unfortunately, I thought I could get away with using 22 AWG Solid core wire. This is massively too thick for this purpose.
+
+I ripped up one of the traces on a surface-mount component when trying to install it.
+
+In the current day, maybe emulation on a playstation classic isn't so bad after all (really easy to modify, native HDMI out, and new hardware).
