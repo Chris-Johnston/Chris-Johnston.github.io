@@ -78,7 +78,7 @@ https://www.marathonfoto.com/Home/Search?
     &utm_source=<Tracking Source>
     &utm_medium=email
     &utm_campaign=<Email Campaign Name>
-    s&_kx=<Tracking Id>
+    &_kx=<Tracking Id>
 ```
 
 And then to here, where it gives you a PIN.
@@ -90,12 +90,12 @@ https://www.marathonfoto.com/Proofs?
     &utm_source=<Tracking Source>
     &utm_medium=email
     &utm_campaign=<Email Campaign Name>
-    s&_kx=<Tracking Id>
+    &_kx=<Tracking Id>
 ```
 
 A cookie is saved with the value `LastKnownCredentials=PIN=<PIN>&LastName=<LastName>`. *I actually found out after writing my script that the cookie or header isn't actually required to download the file.*
 
-What's weird to me is that if you know the RaceOID, LastName, and BibNumber, you can look up photos for anyone in the event. It's fine because the event was in a public park, and this was probably in the paperwork, but I'm not sure if I want these all to be publicly indexable after I've downloaded them.
+What's weird to me is that if you know the RaceOID, LastName, and BibNumber, you can look up photos for anyone in the event. (Everything after is optional.) It's fine because the event was in a public park, and this was probably in the paperwork, but I'm not sure if I want these all to be publicly indexable after I've downloaded them.
 
 The full name and bib number of race participants are available to anyone that raced in the event, the results were all viewable from links on printed QR codes around the event. (On a separate website.)
 
