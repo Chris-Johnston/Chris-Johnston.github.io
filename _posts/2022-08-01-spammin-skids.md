@@ -7,16 +7,16 @@ date: 2022-08-01
 
 # TL;DR
 
-Some scammers on discord, in multiple attempts, tried to send me malware in Discord to take over my account and do other nefarious things. I reverse engineered their malware, and used it to generate to send them fake login credentials to waste their time and effort.
+Some scammers on discord, in multiple attempts, tried to send me malware in Discord to take over my account and do other nefarious things. I reverse engineered their malware, and used it to generate to send them fake login credentials to waste their time and effort by poisoning their dataset.
 
-Eventually their C2 server shut down.
+Eventually their C2 server shut down. Related? Who knows!
 
-# Attack of the dutch furries
+# Notes
 
 These are 'stream of consciousness' notes that I took at the time. They are very messy,
 because I was more focused on recording details than making it look nice (otherwise, I would have spent forever editing this, and never would have pushed it).
 
-A few times, I have been sent unsolicited DMs on Discord. Most of the time they just say "hi" and don't ask for anything. If I have free time, I might reply to them and see what ~~they want~~ scam they are trying to run. I'm a big fan of Scam baiters, and so if I can waste Scammer's time, it means that they aren't actively going after someone else.
+A few times, I have been sent unsolicited DMs on Discord. Most of the time they just say "hi" and don't ask for anything. If I have free time, I might reply to them and see what ~~they want~~ scam they are trying to run. I'm a big fan of Scam-baiting, and so if I can waste a scammer's time, it means that they aren't actively going after someone else.
 
 Every now and then, they send a "game" that they've been "working on", and ask me to try it out. These sometimes are just the `.exe`, sometimes a `.rar` (sometimes password protected), sometimes are a link to some website which hosts it (in one case, their website used the Discord CDN to host it).
 
@@ -52,7 +52,7 @@ I was going to censor this URL when I made this public, but the URL is down, so 
 
 ![](/images/discord-skids/2022-08-12-23-12-19.png)
 
-Despite the scammers now knowing how to set up and host a website, they for some reason are still hosting their binary on the Discord CDN. I bet this is just easier for them to coordinate.Eventually, they just migrated the `.rar` file to their own web server, and not the Discord CDN.
+Despite the scammers now knowing how to set up and host a website, they for some reason are still hosting their binary on the Discord CDN. I bet this is just easier for them to coordinate. Eventually, they just migrated the `.rar` file to their own web server, and not the Discord CDN.
 
 After a bit of being annoying and slow to respond, the scammers told me to log on to a PC to play their game. They also insisted that I log in via my own account, and not via a different account.
 
@@ -102,7 +102,7 @@ Unfortunately this step is  not very interesting, it just hides the conhost wind
 
 ![](/images/discord-skids/2022-08-12-23-20-16.png)
 
-Procmon is pretty cool shit, I was able to log what the process was doing. In addition to writing this powershell script to hide the window I also saw it writing out libraries, accessing directories to check for browser cookies (need to dive further into this), but also saw it going into the discord app data directory. The library and cookies make me think that this is an artifact from nexe, and not the payload of the app itself. Though I can't be too sure.
+Procmon is pretty cool, I was able to log what the process was doing. In addition to writing this powershell script to hide the window I also saw it writing out libraries, accessing directories to check for browser cookies (need to dive further into this), but also saw it going into the discord app data directory. The library and cookies make me think that this is an artifact from nexe, and not the payload of the app itself. Though I can't be too sure.
 
 It seems like discord was the primary target, as that's the way that the scammers can hop accounts, but while they are at it they could be stealing browser cookies and whatever else they can find. Still haven't ruled out exactly what else they are doing here, or how they are doing it, again this is a gap in my coverage of this so far.
 
@@ -112,7 +112,7 @@ Another TODO: Need to figure out what these `.bby` files that are being written 
 
 ## javascript acquiredscript
 
-At least it was easy to get the modified index.js because procmon showed me where it was written to. Unfortunately, it's minified and obfuscated.
+At least it was easy to get the modified index.js because procmon showed me where it was written to. Unfortunately, it's minified and obfuscated. Here's a partial screenshot from when I found it:
 
 ![](/images/discord-skids/2022-08-12-23-23-04.png)
 
@@ -130,7 +130,7 @@ it was sending HTTPS traffic. There was another method that I used to capture tr
 
 ----
 
-### Anyways, this javascript is a hot piece of mess.
+### Anyways, this javascript is a mess
 
 Basically it's a big list of strings which have method names, text fields, segments of urls, etc. and each time it accesses those it calls into a method which basically gets it out of that list.
 
@@ -156,7 +156,7 @@ TODO: I don't have an example screenshot of this.
 Basically, there is another trick that they are doing: the list of keywords is not in the correct order at rest, and needs to be modified before it is accessed. Before anything is accessed, the code will de-scramble the master list. To do this, in a loop it tries to check a number of values against a constant, and if it doesn't match, rotate the list left and try again.
 Once the expected value found, the master list is correctly set.
 
-Thankfully, it's just a simple cipher, and doesn't modify as it is accessed (thank fuck).
+Thankfully, it's just a simple cipher, and doesn't modify as it is accessed.
 
 ![](/images/discord-skids/2022-08-12-23-32-20.png)
 
@@ -170,8 +170,6 @@ why the fuck does parseint accept so many stupid values
 ```
 parseInt('4075e8=_0x') == 4075
 ```
-
-fuck javascript
 
 Anyways, I wrote some python to rotate the list of strings, using the check logic from the
 payload, to compare against the constant. Once I had the de-scrambled list of strings,
@@ -196,7 +194,6 @@ def try_solve():
         # print('HEY I HAVE SOMETHING', ans)
         return ans == 711825
     except Exception as e:
-        # print(e)
         return False
 
 def rotate(l):
@@ -213,7 +210,6 @@ def rotate(l):
     return l
 ```
 
-
 ---
 
 The number of times I had to rotate was about 400 something
@@ -221,7 +217,8 @@ The number of times I had to rotate was about 400 something
 ![](/images/discord-skids/2022-08-12-23-33-32.png)
 
 Once rotated, the string replacement of the words in the string list started to make sense. There's still a little bit of obfustication going on, like strings of js
-that are evaluated at runtime, or lookups into weird lists for some reason, but it's actually readable now and I'm able to figure out what's what
+that are evaluated at runtime, or lookups into weird lists for some reason, but it's actually readable now and I'm able to figure out what's what.
+A simple find and replace could concatenate string constants.
 
 ## so what does it do
 
@@ -253,8 +250,6 @@ yikes
 
 ## phuck the phishers
 
-these guys can eat shit, so i wanted to do something
-
 while I have most of the payload, and can tell where the traffic was going via wireshark dns logs,
 i couldn't really tell too easily what was happening
 
@@ -285,7 +280,7 @@ but here I could copy (as a curl method) the request being made
   --compressed
 ```
 
-great, I have the method, the endpoint, the contents, everything I need to duplicate this attack
+great, I have the method, the endpoint, the contents, everything I need to duplicate this attack (the token, password, and username are all long burned by now)
 
 ## wouldn't it be great if I could generate fake user data to send their way?
 
@@ -346,7 +341,7 @@ and so I created a function app that generates these payloads using fake user da
 
 anyways so now it posts this fake data to them a bunch to waste their time. if I have the further motivation, i'll also implement the changed password and billing data bits that I haven't done yet
 
-## why dutch furries
+## who are these people
 
 ![](/images/discord-skids/2022-08-12-23-52-35.png)
 
@@ -366,13 +361,11 @@ not sure what this other site is or if it's involved, but they stole the landing
 
 whatever, I am going to assume they are dutch furries
 
-also, fuck these guys
-
-
 ## update 8/13
+
 ![](/images/discord-skids/2022-08-13-08-05-46.png)
 
-there is a password on the rar file now
+there is a password on the rar file now (I downloaded it again)
 
 ![](/images/discord-skids/2022-08-13-08-06-16.png)
 
@@ -391,13 +384,13 @@ Press 'q' or Ctrl-C to abort, 'h' for help, almost any other key for status
 
 thanks john the ripper!
 
-
 ![](/images/discord-skids/2022-08-13-08-27-42.png)
 hacking noises intensify
 
 edit: john the ripper was too slow because it did not support GPU, I switched over to GPU brute forcing, since I had no luck using some of my wordlists
 
-I let it run on my laptop for a day, but didn't get very far
+I let it run on my laptop for a day, but didn't get very far. I have not 
+done much password cracking before.
 
 ![](/images/discord-skids/2022-08-14-15-05-15.png)
 
@@ -451,7 +444,7 @@ here's another server they are using
 
 ![](/images/discord-skids/2022-08-14-15-44-38.png)
 
-and it's the same server
+and actually it's the same server
 
 ![](/images/discord-skids/2022-08-14-15-46-43.png)
 
@@ -465,15 +458,15 @@ so like 8 months
 
 ### etc
 
+<!-- where was I going with this??
 contents of the package.json file that enables injection of js
+-->
 
-```
-
-```
+also
 
 ![](/images/discord-skids/2022-08-15-12-55-32.png)
 
-can break the malware if we delete app asar
+we can break the malware if we delete app asar
 
 
 ## Sept 2022
@@ -599,6 +592,8 @@ There is a gap in this graph around Jan 15. Not sure what happened, must have go
 free http proxies that I chose from. Whatever.
 
 Also, the cost of the function app is like $2 a month. Not sure why it isn't covered by the free base cost of invocations, doesn't really matter. This is what free monthly credits are for :sunglasses:
+
+The success rate is very low, but it's above zero. That's all I care about.
 
 ## Next step, wonder how hard it would be to brute force possible c2 addresses
 
