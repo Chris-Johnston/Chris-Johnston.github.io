@@ -2,8 +2,9 @@
 
 title: Chris Johnston
 website_title: "chris-johnston.me"
+# using files locally in the repo instead
 # theme: names_are_hard
-remote_theme: "Chris-Johnston/names_are_hard"
+# remote_theme: "Chris-Johnston/names_are_hard"
 baseurl: ""
 url: "http://chris-johnston.me/"
 github_username: Chris-Johnston

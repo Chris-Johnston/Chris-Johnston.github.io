@@ -1,0 +1,507 @@
+@charset "UTF-8";
+
+// use the style reset
+@import "reset";
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed|Roboto+Mono');
+
+// fonts
+$font-title: 'Oswald', sans-serif;
+$font-main: 'Roboto Condensed', sans-serif !important;
+$font-mono: 'Roboto Mono', monospace;
+
+// colors
+$background-color: #b7d3bb !default;
+$text-background-color: #c2d8ce;
+$code-background-color: #D9D9D9;
+$code-foreground-color: black;
+$foreground-color: #1d2a24 !default;
+$highlight-color: #58806e;
+
+// fonts, only the body
+$body-font-size: 12pt !default;
+$body-li-size: 12pt;
+
+$line-style: 0.5px dotted $foreground-color;
+
+body {
+  color: $foreground-color;
+  background-color: $background-color;
+  font-family: $font-main;
+}
+
+body p {
+  font-size: $body-font-size;
+  line-height: 15pt;
+
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+}
+
+body li {
+  font-size: $body-li-size;
+  line-height: $body-li-size + 2pt;
+
+  margin-top: 2pt;
+  margin-bottom: 2pt;
+}
+
+.site-header {
+  // margin-top: 20pt;
+  padding-top: 20pt;
+  padding-bottom: 10pt;
+  background-color: darken($background-color, 10%);
+  color: $foreground-color;
+  font-family: $font-title;
+  white-space: nowrap;
+  
+}
+
+.site-title, .site-link {
+  display: inline-block;
+}
+
+.site-title {
+  margin: 2pt 10pt;
+  font-size: 40pt;
+  text-decoration: underline;
+}
+
+.github-link,
+.site-link {
+  font-size: 15pt;
+  margin: 5pt;
+  text-decoration: none;
+}
+
+.home {
+  padding-left: 20pt;
+  padding-right: 20pt;
+}
+
+.content-wrapper {
+  padding-top: 10pt;
+  display: grid;
+  grid-template-columns: 1fr 700px 1fr;
+}
+
+.content-wrapper>* {
+  grid-column: 2;
+}
+
+.post-wrapper {
+  border-top: $line-style;
+  padding-top: 10pt;
+  padding-bottom: 5pt;
+  border-bottom: $line-style;
+  height: 10pt;
+  overflow: hidden;
+  display: block;
+  margin-right: 175px;
+}
+
+.site-header-tall>.post-wrapper {
+  border: 0;
+  padding-top: 0;
+  position: absolute;
+  top: 50pt;
+  left: 10pt;
+  font-size: 12pt;
+}
+
+.site-header-tall>.post-wrapper>.post-list-heading {
+  font-size: 12pt;
+}
+
+.post-list-heading {
+  display: inline;
+}
+
+.post-list {
+  margin-left: 1pt;
+  display: inline;
+  overflow: hidden;
+}
+
+.post-element {
+  display: inline;
+  margin-left: 5pt;
+}
+
+.page-title {
+  font-size: 40pt;
+  font-weight: 100;
+  display: inline-block;
+}
+
+.page-description
+{
+  font-size: 18pt;
+  font-weight: 100;
+  color: darken($color: $foreground-color, $amount: 20%);
+}
+
+.page-date
+{
+  margin-left: 5pt;
+  display: inline;
+  color: darken($foreground-color, 30%);
+}
+
+.page-footer {
+  height: 10pt;
+  text-align: center;
+  width: auto;
+  padding: 5pt;
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+a {
+  color: $highlight-color;
+
+  &:visited {
+    color: darken($highlight-color, 10%);
+  }
+
+  &:hover {
+    color: $highlight-color;
+    text-decoration: underline;
+  }
+}
+
+.project-date,
+.post-date {
+  font-size: medium;
+  margin-left: 5pt;
+  display: inline;
+  color: darken($foreground-color, 30%);
+}
+
+.post-list
+{
+  list-style: none;
+}
+
+.post-list li {
+  a {
+    text-decoration: none;
+  }
+
+  .post-title {
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  .post-date {
+    color: $highlight-color;
+    display: inline-block;
+    width: 90px;
+  }
+
+  .post-description {
+    // the 10px discrepancy is left-margin of post-date, and whitespace between
+    // the date and title
+    margin-left: 100px;
+    display: inline-block;
+  }
+
+  margin-bottom: 20pt;
+  line-height: 20px;
+
+  &:hover {
+    .post-title, .post-date
+    {
+      color: darken($highlight-color, 30%);
+    }
+  }
+}
+
+.project,
+.post
+{
+  display: block;
+  margin-bottom: 25pt;
+}
+
+.project-gh::before {
+  content: "GitHub: ";
+}
+
+.project-gh {
+  display: block;
+  padding-top: 4pt;
+  color: darken($color: $foreground-color, $amount: 30%);
+
+  &:hover
+  {
+    text-decoration: underline;
+  }
+}
+
+// .project-description,
+// .post-description {
+//   display: inline-block;
+//   padding-top: 8pt;
+//   padding-bottom: 10px;
+//   border-bottom: 1px dashed darken($color: $foreground-color, $amount: 30%);
+// }
+
+.page-gh {
+  font-size: 15pt;
+}
+
+.project-image,
+.post-image
+{
+  max-height: 300px;
+  border: 0.5px dashed darken($color: $foreground-color, $amount: 30%);
+}
+
+.title-wrapper {
+  margin-top: 30pt;
+  margin-bottom: 20pt;
+}
+
+.site-title,
+.github-link {
+  color: $highlight-color;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin-top: 10pt;
+  margin-bottom: 8pt;
+
+}
+
+h1 {
+  font-size: 25pt;
+}
+
+h2 {
+  font-size: 22pt;
+}
+
+h3 {
+  font-size: 20pt;
+}
+
+h4 {
+  font-size: 18pt;
+}
+
+h5 {
+  font-size: 15pt;
+}
+
+h6 {
+  font-size: 12pt;
+}
+
+b,
+strong,
+i,
+em {
+  color: $highlight-color;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+ul {
+  margin-left: 15pt;
+  list-style-type: disc;
+}
+
+ol {
+  margin-left: 15pt;
+  list-style: decimal;
+}
+
+li {
+
+  >ul,
+  >ol {
+    margin-bottom: 0;
+  }
+}
+
+// pre > code is a code block
+// code is inline
+
+// code block
+pre.highlight {
+  background-color: $code-background-color;
+  color: $code-foreground-color;
+  font-family: $font-mono;
+  // border: 1px solid black;
+  font-size: 14px;
+}
+
+// inline code
+code {
+  background-color: $code-background-color;
+  color: $code-foreground-color;
+  font-family: $font-mono;
+
+  padding-left: 3px;
+  padding-right: 3px;
+
+  overflow: scroll;
+}
+
+pre.highlight>code {
+  display: block;
+  padding: 5pt;
+}
+
+iframe {
+  margin: 10pt auto;
+  display: block;
+  width: 80%;
+}
+
+img {
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 80%;
+  vertical-align: middle;
+}
+
+blockquote {
+  display: block;
+  padding: 8pt;
+  background: lighten($background-color, 10%);
+}
+
+table {
+  margin-bottom: 5pt;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid $foreground-color;
+
+  tr {
+    &:nth-child(even) {
+      background-color: lighten($background-color, 10%);
+    }
+  }
+
+  th,
+  td {
+    padding: 2pt;
+  }
+
+  th {
+    background-color: lighten($background-color, 15%);
+    border: 1px solid $foreground-color;
+    border-bottom-color: darken($foreground-color, 35%);
+  }
+
+  td {
+    border: 1px solid darken($foreground-color, 35%);
+  }
+}
+
+@media screen and (max-width: 400px) 
+{
+  .site-header a
+  {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 750px)
+{
+  .site-title
+  {
+    position: static;
+    display: block;
+    margin: 10px;
+    margin-bottom: 15px;
+    width: auto;
+    height: auto;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    font-size: 30pt;
+  }
+
+  .site-header .site-link 
+  {
+    position: static;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: auto;
+    height: auto;
+    top: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .site-header-tall > .post-wrapper {
+    margin: 5px 10px;
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    top: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .content-wrapper
+  {
+    display: block;
+  }
+
+  .project-list
+  {
+    max-width: 95%;
+  }
+
+  .project,
+  .post
+  {
+    .project-title, .page-title, .post-title
+    {
+      display: block;
+      margin-bottom: 2pt;
+      color: $foreground-color;
+    }
+    .project-date, .project-gh, .project-description
+    {
+      display: block;
+      margin: 2pt;
+    }
+  }
+  .page-date, .page-description
+  {
+    display: block;
+    margin: 2pt;
+  }
+}
+
+@import "syntax";
