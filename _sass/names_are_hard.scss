@@ -374,6 +374,7 @@ pre.highlight>code {
   color: $code-foreground-color;
   display: block;
   padding: 20pt 10pt;
+  overflow: scroll;
 }
 
 iframe {
