@@ -13,13 +13,13 @@ $font-main: 'Open Sans', sans-serif !important;
 $font-mono: 'Noto Sans Mono', monospace;
 
 // colors
-$background-color: #6bbacc !default;
+$background-color: #c1d4e1 !default;
 $text-background-color: #a9cdd5;
 $code-background-color: #D9D9D9;
 $code-foreground-color: black;
 $foreground-color: #0e1411 !default;
 $highlight-color: #3f585c;
-$header-color: #c1d4e1;
+$header-color: #6bbacc;
 $darker-text: darken($foreground-color, 30%);
 $darker-highlight: darken($highlight-color, 10%);
 $hover-highlight: darken($highlight-color, 30%);
@@ -72,6 +72,7 @@ body li {
   margin: 2pt 10pt;
   font-size: 40pt;
   text-decoration: underline;
+  font-weight: bold;
 }
 
 .github-link,
