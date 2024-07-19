@@ -50,12 +50,12 @@ for webhook notifications.
 
 # Grappel (Spring 2018)
 
-### [Play now at https://grappel.ninja !][grappel]
+### [Play now at https://chris-johnston.me/Grappel/ !][grappel]
 
 [Source code hosted on GitHub.][grappel-gh]
 
 [grappel-gh]: https://github.com/Chris-Johnston/Grappel
-[grappel]: https://grappel.ninja/
+[grappel]: https://chris-johnston.me/Grappel/
 
 Grappel is a physics-based platformer in which your 
 objective is to skillfully manuever through several
@@ -83,10 +83,6 @@ trying out new ideas based on playtest feedback later on.
 [grappel-gameplay]: {{ site.baseurl }}/images/games-portfolio/grappel_gameplay.png
 
 # Kelvin 373 (Winter 2018)
-
-### [Play now at https://fantasticpineapplebrotherhood.fun][fpb]
-
-[Source code hosted on GitHub.][fpb-gh]
 
 Kelvin 373 is a boss-rush platformer in which the player's skills are tested against two bosses.
 

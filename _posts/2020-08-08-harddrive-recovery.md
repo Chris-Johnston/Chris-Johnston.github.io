@@ -15,15 +15,12 @@ after trying the methods I used here.
 ## TL;DR
 
 - I was _very_ lucky.
-- Back up your data using best practices, and check that your backups are working.
+- Back up your data and check that your backups are working.
     - A RAID 1 configuration does not count as two "backups".
     - Schedule and perform regular manual backups if necessary.
 - Double check every power adapter before plugging it in.
 
 # How I killed my hard drives
-
-I'm sure you must be thinking, how could anybody destroy a hard drive by accident?
-Surely no technical person could make such a big mistake? (I'm literally on the computer all day.)
 
 When I was moving, I had to clear all of the stuff from my desk area.
 This included the computer, monitors, all of the accessories and their power bricks. To drive my fancy headphones, I have an

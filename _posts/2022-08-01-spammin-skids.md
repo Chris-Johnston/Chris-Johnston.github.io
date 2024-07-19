@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spamming some Discord Scammers
-description: Someone tried to scam me, so I sent them fake login data.
+description: Someone tried to scam me, so I sent them fake login tokens.
 date: 2022-08-01
 ---
 

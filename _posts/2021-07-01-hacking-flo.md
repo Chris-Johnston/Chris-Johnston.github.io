@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Hacking the Moen Flo IoT leak sensors
+title: Investigating Moen Flo UART
 description: I bought some IoT leak sensors and dumped the firmware.
 date: 2021-07-01
 ---
 
-# Hacking Moen Flo leak sensors
+# Investigating Moen Flo UART
 
 I bought some Moen Flo sensors and threw them around, since I have a sink which
 used to leak. These are wifi-connected IOT sensors which beep and send a notification
@@ -20,7 +20,7 @@ on an unpopulated header!
 Once I saw this, I left a unit behind and didn't update the firmware. I wanted to see
 if there was anything interesting I could do using the state out of the box.
 
-## Connecting to serial
+## Connecting to UART
 
 I used a normal FTDI usb-serial cable and some jumper wires to plug into the programming
 interface. When the device was turned on, I saw messages on the console!

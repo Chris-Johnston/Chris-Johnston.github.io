@@ -70,7 +70,7 @@ Afterwards I found some screws that fit and put the whole thing together. I'm st
 
 ## Other Stuff
 
-One thing I learned the hard way was that the connector joining both sides of the keyboard is a TRRS connector. This means it has 4 connectors, not like a traditional AUX cable. Amazon prime one day shipping to the rescue!
+One thing I learned the hard way was that the connector joining both sides of the keyboard is a TRRS connector. This means it has 4 connectors, not like a traditional AUX cable. I was able to overnight the correct cable the next day.
 
 The keyboards scratch easily if they aren't protected. I found some cheap 'craft' bags on Amazon that I now put them in. I need to get some nicer ones, or consider ordering some other ones.
 
