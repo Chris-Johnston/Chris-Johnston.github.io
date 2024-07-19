@@ -364,19 +364,16 @@ pre.highlight {
 
 // inline code
 code {
-  background-color: $code-background-color;
-  color: $code-foreground-color;
   font-family: $font-mono;
-
-  padding-left: 3px;
-  padding-right: 3px;
-
-  overflow: scroll;
+  color: $code-foreground-color;
 }
 
+// code blocks
 pre.highlight>code {
+  background-color: $code-background-color;
+  color: $code-foreground-color;
   display: block;
-  padding: 5pt;
+  padding: 20pt 10pt;
 }
 
 iframe {
