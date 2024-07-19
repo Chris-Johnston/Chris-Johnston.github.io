@@ -359,8 +359,6 @@ which is a clone of `superfurrycdn.nl`
 
 not sure what this other site is or if it's involved, but they stole the landing page and the favicon
 
-whatever, I am going to assume they are dutch furries
-
 ## update 8/13
 
 ![](/images/discord-skids/2022-08-13-08-05-46.png)
