@@ -2,20 +2,27 @@
 
 // use the style reset
 @import "reset";
-@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed|Roboto+Mono');
+// @import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed|Roboto+Mono');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 
 // fonts
-$font-title: 'Oswald', sans-serif;
-$font-main: 'Roboto Condensed', sans-serif !important;
-$font-mono: 'Roboto Mono', monospace;
+$font-title: 'Open Sans', sans-serif;
+$font-main: 'Open Sans', sans-serif !important;
+$font-mono: 'Noto Sans Mono', monospace;
 
 // colors
-$background-color: #b7d3bb !default;
-$text-background-color: #c2d8ce;
+$background-color: #6bbacc !default;
+$text-background-color: #a9cdd5;
 $code-background-color: #D9D9D9;
 $code-foreground-color: black;
-$foreground-color: #1d2a24 !default;
+$foreground-color: #0e1411 !default;
 $highlight-color: #58806e;
+$header-color: darken($background-color, 10%);
+$darker-text: darken($foreground-color, 30%);
+$darker-highlight: darken($highlight-color, 10%);
+$hover-highlight: darken($highlight-color, 30%);
 
 // fonts, only the body
 $body-font-size: 12pt !default;
@@ -27,6 +34,7 @@ body {
   color: $foreground-color;
   background-color: $background-color;
   font-family: $font-main;
+  font-optical-sizing: auto;
 }
 
 body p {
@@ -49,7 +57,7 @@ body li {
   // margin-top: 20pt;
   padding-top: 20pt;
   padding-bottom: 10pt;
-  background-color: darken($background-color, 10%);
+  background-color: $header-color;
   color: $foreground-color;
   font-family: $font-title;
   white-space: nowrap;
@@ -137,14 +145,14 @@ body li {
 {
   font-size: 18pt;
   font-weight: 100;
-  color: darken($color: $foreground-color, $amount: 20%);
+  color: $darker-text;
 }
 
 .page-date
 {
   margin-left: 5pt;
   display: inline;
-  color: darken($foreground-color, 30%);
+  color: $darker-text;
 }
 
 .page-footer {
@@ -162,7 +170,7 @@ a {
   color: $highlight-color;
 
   &:visited {
-    color: darken($highlight-color, 10%);
+    color: $darker-highlight;
   }
 
   &:hover {
@@ -176,7 +184,7 @@ a {
   font-size: medium;
   margin-left: 5pt;
   display: inline;
-  color: darken($foreground-color, 30%);
+  color: $darker-text;
 }
 
 .post-list
@@ -213,7 +221,7 @@ a {
   &:hover {
     .post-title, .post-date
     {
-      color: darken($highlight-color, 30%);
+      color: $hover-highlight;
     }
   }
 }
